@@ -29,18 +29,20 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
-    
+    <script src="libs\jquery-3.6.0\jquery-3.6.0.min.js"></script>
+    <script src="libs\angular\angular.min.js"></script>
 </head>
 <body>
-<script>
+    <script>
         var xmlhttp = new XMLHttpRequest();
     xmlhttp.onreadystatechange = function() {
       if (this.readyState == 4 && this.status == 200) {
-        document.body.innerHTML = this.responseText;
+        $("#test").append(this.responseText);
       }
     };
     xmlhttp.open("GET", "prova.php" , true);
     xmlhttp.send();
     </script>
+    <div id="test"></div>
 </body>
 </html>
