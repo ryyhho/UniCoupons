@@ -1,7 +1,7 @@
 <?php
     session_start();
     
-    $db_details = "host=localhost port=5432 dbname=uni_coupons user=postgres password=database";
+    $db_details = "host=localhost port=5432 dbname=uni_coupons user=postgres password=1234";
 
     $_SESSION['db_details'] = $db_details;
 
