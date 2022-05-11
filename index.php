@@ -9,7 +9,7 @@
 
 ?>
 <!DOCTYPE html>
-<html lang="en">
+<html lang="it">
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -22,11 +22,12 @@
     <!-- js -->
     <script src="libs\jquery-3.6.0\jquery-3.6.0.min.js"></script>
     <script src="libs\angular\angular.min.js"></script>
-    <script src="libs\bootstrap-5.1.3-dist\js\bootstrap.bundle.min.js"></script>
+    <script src="libs\bootstrap-5.1.3-dist\js\bootstrap.bundle.min.js"></script> 
+
 </head>
 <body>
     <div class="container-fluid">
-        <nav class="navbar navbar-light bg-light justify-content-center">
+        <nav class="navbar navbar-light bg-light justify-content-between">
             <!-- <div class="container-fluid"> -->
                 <a class="navbar-brand" href="#">
                 <img src="/docs/5.1/assets/brand/bootstrap-logo.svg" alt="" width="30" height="24" class="d-inline-block align-text-top">
@@ -36,39 +37,36 @@
                     <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
                     <button class="btn btn-outline-success" type="submit">Search</button>
                 </form>
-            <!-- </div> -->
-        </nav>
-
-        <div class="dropdown">
-            <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenu2" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                Dropdown
-            </button>
-                <div class="dropdown-menu" aria-labelledby="dropdownMenu2">
-                    <form class="px-4 py-3">
-                        <div class="form-group">
-                        <label for="exampleDropdownFormEmail1">Email address</label>
-                        <input type="email" class="form-control" id="exampleDropdownFormEmail1" placeholder="email@example.com">
+                <div class="dropdown">
+                    <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenu2" data-bs-toggle="dropdown" aria-expanded="false">
+                        Dropdown
+                    </button>
+                    <div class="dropdown-menu">
+                        <form class="px-4 py-3">
+                        <div class="mb-3">
+                            <label for="exampleDropdownFormEmail1" class="form-label">Email address</label>
+                            <input type="email" class="form-control" id="exampleDropdownFormEmail1" placeholder="email@example.com">
                         </div>
-                        <div class="form-group">
-                        <label for="exampleDropdownFormPassword1">Password</label>
-                        <input type="password" class="form-control" id="exampleDropdownFormPassword1" placeholder="Password">
+                        <div class="mb-3">
+                            <label for="exampleDropdownFormPassword1" class="form-label">Password</label>
+                            <input type="password" class="form-control" id="exampleDropdownFormPassword1" placeholder="Password">
                         </div>
-                        <div class="form-group">
-                        <div class="form-check">
+                        <div class="mb-3">
+                            <div class="form-check">
                             <input type="checkbox" class="form-check-input" id="dropdownCheck">
                             <label class="form-check-label" for="dropdownCheck">
-                            Remember me
+                                Remember me
                             </label>
-                        </div>
+                            </div>
                         </div>
                         <button type="submit" class="btn btn-primary">Sign in</button>
-                    </form>
-                    <div class="dropdown-divider"></div>
-                    <a class="dropdown-item" href="#">New around here? Sign up</a>
-                    <a class="dropdown-item" href="#">Forgot password?</a>
+                        </form>
+                        <div class="dropdown-divider"></div>
+                        <a class="dropdown-item" href="#">New around here? Sign up</a>
+                        <a class="dropdown-item" href="#">Forgot password?</a>
                     </div>
-            </div>
-        </div>
-</div>
+            <!-- </div> -->
+        </nav>
+    </div> 
 </body>
 </html>
