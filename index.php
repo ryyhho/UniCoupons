@@ -9,7 +9,7 @@
 
 ?>
 <!DOCTYPE html>
-<html lang="it">
+<html ng-app="uniCoupons.app" lang="it">
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -21,8 +21,20 @@
 
     <!-- js -->
     <script src="libs\jquery-3.6.0\jquery-3.6.0.min.js"></script>
-    <script src="libs\angular\angular.min.js"></script>
-    <script src="libs\bootstrap-5.1.3-dist\js\bootstrap.bundle.min.js"></script> 
+    <script src="libs\angular-1.3.15\angular.min.js"></script>
+    <script src="libs\angular-1.3.15\i18n\angular-locale_it-it.js"></script>
+    <script src="libs\angular-1.3.15\angular-filter.js"></script>
+    <script src="libs\angular-1.3.15\libs\angular-ui-router.min.js"></script>
+    <script src="libs\angular-1.3.15\libs\ui-utils.min.js"></script>
+    <script src="libs\angular-1.3.15\libs\ngStorage.min.js"></script>
+    <script src="libs\angular-1.3.15\libs\smart-table.min.js"></script>
+    <script src="libs\angular-1.3.15\libs\jquery.form.min.js"></script>
+    <script src="libs\angular-1.3.15\libs\jquery.form.min.js"></script>
+    <script src="libs\angular-1.3.15\libs\ui-bootstrap-tpls-0.12.1.min.js"></script> 
+
+    <!-- angular -->
+    <script src="js\app.js"></script>
+    <script src="js\controllers\home.js"></script>
 
 </head>
 <body>
@@ -41,7 +53,7 @@
                     <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenu2" data-bs-toggle="dropdown" aria-expanded="false">
                         Dropdown
                     </button>
-                    <div class="dropdown-menu">
+                    <div class="dropdown-menu dropdown-menu-end">
                         <form class="px-4 py-3">
                         <div class="mb-3">
                             <label for="exampleDropdownFormEmail1" class="form-label">Email address</label>
