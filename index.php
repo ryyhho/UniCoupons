@@ -19,6 +19,9 @@
 
     <!-- css -->
     <link href="libs\bootstrap-5.1.3-dist\css\bootstrap.min.css" rel="stylesheet">
+    <link href="libs\bootstrap-icons-1.8.2\font\bootstrap-icons.css" rel="stylesheet">
+
+    <link href="css\style.css" rel="stylesheet">
 
     <!-- js libs -->
     <script src="libs\jquery-3.6.0\jquery-3.6.0.min.js"></script>
