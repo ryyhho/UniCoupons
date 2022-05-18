@@ -146,9 +146,9 @@ uniCoupons.config(function(
     $compileProvider) {
 
         $urlRouterProvider
-            .when('/', '/home')
-            .when('', '/home')
-            .when('/index.php', '/home');
+            .when('/', '/coupons')
+            .when('', '/coupons')
+            .when('/index.php', '/coupons');
         
         $stateProvider.state('home', {
             url: '/',
@@ -156,8 +156,16 @@ uniCoupons.config(function(
                 '@': {
                     template: '<ui-view/>',
                     controller: 'uniCoupons.controllers.home'
+                },
+                'login': {
+                    templateUrl: 'partials/login.html',
+                    controller: 'uniCoupons.controllers.login'
                 }
             }
+        }).state('home.coupons', {
+            url: 'coupons',
+            templateUrl : 'partials/coupons.html',
+            controller : 'uniCoupons.controllers.coupons'
         });
 
 });

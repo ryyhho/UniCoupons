@@ -10,6 +10,7 @@
 ?>
 <!DOCTYPE html>
 <html ng-app="uniCoupons.app" lang="it">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -19,7 +20,7 @@
     <!-- css -->
     <link href="libs\bootstrap-5.1.3-dist\css\bootstrap.min.css" rel="stylesheet">
 
-    <!-- js -->
+    <!-- js libs -->
     <script src="libs\jquery-3.6.0\jquery-3.6.0.min.js"></script>
     <script src="libs\angular-1.3.15\angular.min.js"></script>
     <script src="libs\angular-1.3.15\i18n\angular-locale_it-it.js"></script>
@@ -30,55 +31,41 @@
     <script src="libs\angular-1.3.15\libs\smart-table.min.js"></script>
     <script src="libs\angular-1.3.15\libs\jquery.form.min.js"></script>
     <script src="libs\angular-1.3.15\libs\jquery.form.min.js"></script>
-    <script src="libs\angular-1.3.15\libs\ui-bootstrap-tpls-0.12.1.min.js"></script> 
+    <script src="libs\angular-1.3.15\libs\ui-bootstrap-tpls-0.12.1.min.js"></script>
+    <script src="libs\bootstrap-5.1.3-dist\js\bootstrap.bundle.min.js"></script>
+
+    <!-- js -->
+    <script src="js\common.js"></script>
 
     <!-- angular -->
     <script src="js\app.js"></script>
     <script src="js\controllers\home.js"></script>
+    <script src="js\controllers\login.js"></script>
+    <script src="js\controllers\coupons.js"></script>
+
+    <script src="js\services\utenteFactory.js"></script>
 
 </head>
+
 <body>
     <div class="container-fluid">
         <nav class="navbar navbar-light bg-light justify-content-between">
-            <!-- <div class="container-fluid"> -->
-                <a class="navbar-brand" href="#">
-                <img src="/docs/5.1/assets/brand/bootstrap-logo.svg" alt="" width="30" height="24" class="d-inline-block align-text-top">
+            <a class="navbar-brand" href="#">
+                <img src="/docs/5.1/assets/brand/bootstrap-logo.svg" alt="" width="30" height="24"
+                    class="d-inline-block align-text-top">
                 UniCoupons
-                </a>
-                <form class="d-flex">
-                    <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
-                    <button class="btn btn-outline-success" type="submit">Search</button>
-                </form>
-                <div class="dropdown">
-                    <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenu2" data-bs-toggle="dropdown" aria-expanded="false">
-                        Dropdown
-                    </button>
-                    <div class="dropdown-menu dropdown-menu-end">
-                        <form class="px-4 py-3">
-                        <div class="mb-3">
-                            <label for="exampleDropdownFormEmail1" class="form-label">Email address</label>
-                            <input type="email" class="form-control" id="exampleDropdownFormEmail1" placeholder="email@example.com">
-                        </div>
-                        <div class="mb-3">
-                            <label for="exampleDropdownFormPassword1" class="form-label">Password</label>
-                            <input type="password" class="form-control" id="exampleDropdownFormPassword1" placeholder="Password">
-                        </div>
-                        <div class="mb-3">
-                            <div class="form-check">
-                            <input type="checkbox" class="form-check-input" id="dropdownCheck">
-                            <label class="form-check-label" for="dropdownCheck">
-                                Remember me
-                            </label>
-                            </div>
-                        </div>
-                        <button type="submit" class="btn btn-primary">Sign in</button>
-                        </form>
-                        <div class="dropdown-divider"></div>
-                        <a class="dropdown-item" href="#">New around here? Sign up</a>
-                        <a class="dropdown-item" href="#">Forgot password?</a>
-                    </div>
-            <!-- </div> -->
+            </a>
+            <form class="d-flex">
+                <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
+                <button class="btn btn-outline-success" type="submit">Search</button>
+            </form>
+            <!-- view login -->
+            <div ui-view="login"></div>
         </nav>
-    </div> 
+    </div>
+
+    <!-- view login -->
+    <div ui-view></div>
 </body>
+
 </html>
