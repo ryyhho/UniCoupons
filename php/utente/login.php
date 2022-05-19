@@ -12,6 +12,8 @@ try {
         $result = pg_query_params($dbconn, $q2, array($email, $psw));
         if($line = pg_fetch_array($result, null, PGSQL_ASSOC)){
             
+            $line['admin'] = $line['admin'] == 't' ? true : false;
+            $_SESSION['user'] = $line;
             echo json_encode($line);
 
         } else

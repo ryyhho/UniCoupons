@@ -1,6 +1,20 @@
-angular.module('uniCoupons.controllers').controller('uniCoupons.controllers.home', [ '$scope', 
-   function($scope) {
+angular.module('uniCoupons.controllers').controller('uniCoupons.controllers.home',[ '$scope', '$rootScope', 'uniCoupons.services.utenteFactory', 
+function($scope, $rootScope, utenteFactory) {
 
-      $scope.test = 'ao';
+   utenteFactory.isLoggedIn().then(
+      function (res) {
+          $rootScope.utente = res.data;
+      },
+      function (err) {
+
+          if (err.status == 0) {
+          } else {
+              $scope.error = true;
+              $scope.errorMsg = err.data.msg;
+          }
+          console.log('Errore:', err);
+      })['finally'](function(res) {
+          $scope.loading = false;
+      });
    
 }]);

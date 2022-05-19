@@ -47,6 +47,7 @@
     <script src="js\controllers\coupons.js"></script>
 
     <script src="js\services\utenteFactory.js"></script>
+    <script src="js\services\enteFactory.js"></script>
 
 </head>
 

@@ -1,6 +1,6 @@
 angular.module('uniCoupons.controllers').controller('uniCoupons.controllers.login',
-    ['$scope', 'uniCoupons.services.utenteFactory',
-        function ($scope, utenteFactory) {
+    ['$scope', '$rootScope', 'uniCoupons.services.utenteFactory',
+        function ($scope, $rootScope, utenteFactory) {
 
             $scope.loginForm = {};
 
@@ -13,7 +13,7 @@ angular.module('uniCoupons.controllers').controller('uniCoupons.controllers.logi
 
                 utenteFactory.login($scope.loginForm).then(
                     function (res) {
-                        $scope.utente = res.data;
+                        $rootScope.utente = res.data;
                     },
                     function (err) {
 
