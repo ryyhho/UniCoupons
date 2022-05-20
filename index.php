@@ -48,6 +48,7 @@
 
     <script src="js\services\utenteFactory.js"></script>
     <script src="js\services\enteFactory.js"></script>
+    <script src="js\services\couponFactory.js"></script>
 
 </head>
 
