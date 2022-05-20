@@ -7,6 +7,12 @@ angular.module('uniCoupons.services').factory('uniCoupons.services.utenteFactory
 			},
 			isLoggedIn: function () {
 				return $http.get(urlBase + '/isLoggedIn' + PHP_EXT);
+			},
+			logout: function () {
+				return $http.get(urlBase + '/logout' + PHP_EXT);
+			},
+			signup: function (obj) {
+				return $http.post(urlBase + '/signup' + PHP_EXT, obj);
 			}
 	  	};
 	}
