@@ -14,20 +14,20 @@
             </div>
             <div class="col-12">
                 <div id="carouselPartner" class="carousel slide" data-bs-ride="carousel">
-
                     <div class="carousel-inner">
-
                         <div class="carousel-item" ng-class="{active: $first}" ng-repeat="item in enti">
-                            <div class="row">
+                            <div class="d-flex justify-content-center row">
                                 <div class="col-md-4 mb-3" ng-repeat="elem in item">
-                                    <div class="card">
-                                        <img class="img-fluid" alt="100%x280" src="src\ente\{{elem.id_ente}}.jpg">
+                                    <div class="card coupon card-hover-zoom" ng-click="filterCoupons(elem)"
+                                        ng-class="classCardActive(elem)">
+                                        <div class="card-img-hover-zoom border-bottom">
+                                            <img class="card-img-top img-fluid bg-white"
+                                                ng-src="src\ente\{{elem.id_ente}}.jpg" on-error-src="img\company.png">
+                                        </div>
                                         <div class="card-body">
                                             <h4 class="card-title">{{elem.nome}}</h4>
                                             <p class="card-text">{{elem.descrizione}}</p>
-
                                         </div>
-
                                     </div>
                                 </div>
                             </div>
@@ -39,10 +39,7 @@
     </div>
 </section>
 
-
-
-
-<div class="text-center">
+<div class="text-center" id="couponsSection">
     <h3 class="h3">Non perderti questi coupon</h3>
 </div>
 
@@ -56,23 +53,23 @@
                             <div class="row no-gutters">
                                 <div class="col-md-4 border-end justify-content-center d-flex align-items-center">
                                     <div class="d-flex flex-column align-items-center"><img
-                                            src="src\ente\{{elem.id_ente}}.jpg" class="rounded-circle me-1"
-                                            width="64"><span class="d-block">{{getEnte(elem.id_ente).nome}}</span><span
+                                            ng-src="src\ente\{{elem.id_ente}}.jpg" on-error-src="img\company.png"
+                                            class="rounded-circle me-1 coupon-img" ><span
+                                            class="d-block">{{getEnte(elem.id_ente).nome}}</span><span
                                             class="text-black-50">{{getEnte(elem.id_ente).descrizione}}</span></div>
                                 </div>
-                                <div class="col-md-8">
-                                    <div>
-                                        <div class="d-flex flex-row justify-content-end off px-3">
-                                            <h1>{{elem.titolo}}</h1>
-                                            <i class="bi bi-percent" ng-if="elem.euro_perc === false"></i>
-                                            <i class="bi bi-currency-euro" ng-if="elem.euro_perc === true"></i>
-                                        </div>
-                                        <div class="d-flex flex-row justify-content-between off px-3 p-2"><span>
-                                                {{elem.descrizione}}
-                                            </span>
-                                            <button type="button"
-                                                class="btn btn-outline-success btn-sm">{{elem.codice}}</button>
-                                        </div>
+                                <div class="col-md-8 d-flex flex-column justify-content-between">
+                                    <div class="d-flex flex-row justify-content-end off px-3">
+                                        <h1>{{elem.titolo}}</h1>
+                                        <i class="bi bi-percent" ng-if="elem.euro_perc === false"></i>
+                                        <i class="bi bi-currency-euro" ng-if="elem.euro_perc === true"></i>
+                                    </div>
+                                    <div class="d-flex flex-row justify-content-between off px-3 p-2">
+                                        <span class="pe-2">
+                                            {{elem.descrizione}}
+                                        </span>
+                                        <button type="button"
+                                            class="btn btn-outline-success btn-sm mt-auto">{{elem.codice}}</button>
                                     </div>
                                 </div>
                             </div>

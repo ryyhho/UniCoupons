@@ -1,11 +1,11 @@
 <?php
-    session_start();
-    
-    $db_details = "host=localhost port=5432 dbname=uni_coupons user=postgres password=1234";
+session_start();
 
-    $_SESSION['db_details'] = $db_details;
+$db_details = "host=localhost port=5432 dbname=uni_coupons user=postgres password=1234";
 
-    $dbconn = pg_connect ($db_details) or die('Impossibile connetersi: ' . preg_last_error());
+$_SESSION['db_details'] = $db_details;
+
+$dbconn = pg_connect($db_details) or die('Impossibile connetersi: ' . preg_last_error());
 
 ?>
 <!DOCTYPE html>
@@ -41,9 +41,11 @@
     <script src="js\common.js"></script>
 
     <!-- angular -->
+    <script src="js\directives.js"></script>
     <script src="js\app.js"></script>
     <script src="js\controllers\home.js"></script>
     <script src="js\controllers\login.js"></script>
+    <script src="js\controllers\register.js"></script>
     <script src="js\controllers\coupons.js"></script>
 
     <script src="js\services\utenteFactory.js"></script>
@@ -54,23 +56,30 @@
 
 <body>
     <div class="container-fluid">
-        <nav class="navbar navbar-light bg-light justify-content-between">
+        <nav class="navbar navbar-expand-lg fixed-top navbar-light bg-light px-2">
+            <button class="navbar-toggler border-0" type="button" data-bs-toggle="collapse" data-bs-target="#navbar" aria-controls="navbar" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
             <a class="navbar-brand" href="#">
-                <img src="/docs/5.1/assets/brand/bootstrap-logo.svg" alt="" width="30" height="24"
-                    class="d-inline-block align-text-top">
+                <img src="/docs/5.1/assets/brand/bootstrap-logo.svg" alt="" width="30" height="24" class="d-inline-block align-text-top">
                 UniCoupons
             </a>
-            <form class="d-flex">
-                <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
-                <button class="btn btn-outline-success" type="submit">Search</button>
-            </form>
-            <!-- view login -->
-            <div ui-view="login"></div>
+            <div class="collapse navbar-collapse justify-content-end" id="navbar">
+                <form class="d-flex mx-auto">
+                    <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
+                    <button class="btn btn-outline-success" type="submit">Search</button>
+                </form>
+                <ul class="navbar-nav">
+                    <!-- view login -->
+                    <div ui-view="login"></div>
+                </ul>
+            </div>
         </nav>
     </div>
+    <div ui-view="register"></div>
 
-    <!-- view login -->
-    <div ui-view></div>
+    <!-- view -->
+    <div ui-view class="py-5"></div>
 </body>
 
 </html>

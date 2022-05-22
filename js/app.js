@@ -1,11 +1,10 @@
-'use strict';
-
 var uniCoupons = angular.module('uniCoupons.app', [
     'ui.router',
     'ui.mask',
     'ui.bootstrap',
     'uniCoupons.controllers',
     'uniCoupons.services',
+    'uniCoupons.directives',
     'angular.filter'
 ]);
 
@@ -160,6 +159,10 @@ uniCoupons.config(function(
                 'login': {
                     templateUrl: 'partials/login.html',
                     controller: 'uniCoupons.controllers.login'
+                },
+                'register': {
+                    templateUrl: 'partials/register.html',
+                    controller: 'uniCoupons.controllers.register'
                 }
             }
         }).state('home.coupons', {

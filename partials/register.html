@@ -1,0 +1,57 @@
+<div class="modal fade" id="registerModal" tabindex="-1" aria-labelledby="registerModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered modal-lg modal-fullscreen-sm-down">
+        <div class="modal-content">
+            <form id="formSignup" name="formSignup">
+                <div class="d-flex justify-content-center align-items-center overlay" ng-if="loading">
+                    <div class="spinner-border" role="status">
+                        <span class="visually-hidden">Loading...</span>
+                    </div>
+                </div>
+                <div class="modal-header">
+                    <h5 class="modal-title" id="registerModalLabel">Registrati</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    <div class="alert alert-danger alert-dismissible fade show" role="alert" ng-if="error">
+                        <i class="bi bi-exclamation-triangle-fill"></i>
+                        <strong>Ops!</strong> {{errorMsg}}
+                        <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+                    </div>
+                    <div class="container-fluid">
+                        <div class="mb-3 row">
+                            <div class="col-md-6">
+                                <label for="email" class="form-label">Email address</label>
+                                <input type="email" class="form-control" id="email" ng-model="signupForm.email" required
+                                    placeholder="email@example.com">
+                            </div>
+                            <div class="col-md-6">
+                                <label for="psw" class="form-label">Password</label>
+                                <input type="password" class="form-control" id="psw" ng-model="signupForm.psw" required
+                                    placeholder="Password">
+                            </div>
+                        </div>
+                        <div class="mb-3 row">
+                            <div class="col-md-6">
+                                <label for="nome" class="form-label">Nome</label>
+                                <input type="text" class="form-control" id="nome" ng-model="signupForm.nome" required
+                                    placeholder="email@example.com">
+                            </div>
+                            <div class="col-md-6">
+                                <label for="cognome" class="form-label">Cognome</label>
+                                <input type="text" class="form-control" id="cognome" ng-model="signupForm.cognome"
+                                    required placeholder="Password">
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Chiudi</button>
+                    <button type="submit" class="btn btn-primary" ng-click="formSignup.$valid && signUp()">
+                        <span class="spinner-border spinner-border-sm" role="status" aria-hidden="true"
+                            ng-if="loading"></span>
+                        Conferma</button>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>
