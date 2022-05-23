@@ -1,6 +1,6 @@
 angular.module('uniCoupons.controllers').controller('uniCoupons.controllers.coupons',
-   ['$scope', '$rootScope', '$filter', 'uniCoupons.services.enteFactory', 'uniCoupons.services.couponFactory',
-      function ($scope, $rootScope, $filter, enteFactory, couponFactory) {
+   ['$scope', '$rootScope', '$filter', '$timeout', 'uniCoupons.services.enteFactory', 'uniCoupons.services.couponFactory',
+      function ($scope, $rootScope, $filter, $timeout, enteFactory, couponFactory) {
 
          enteFactory.get().then(function (res) {
             $scope.entiList = res.data;
@@ -23,10 +23,17 @@ angular.module('uniCoupons.controllers').controller('uniCoupons.controllers.coup
                $scope.enteSelected = ente;
             $scope.coupons =
                utils.groupArr($filter('filter')($scope.couponsList, { id_ente: $scope.enteSelected.id_ente }, true));
-            
+
             $([document.documentElement, document.body]).animate({
                scrollTop: $("#couponsSection").offset().top
             }, 100);
+         }
+
+         $scope.copyCode = function(coupon) {
+            coupon.copied = true;
+            navigator.clipboard.writeText(coupon.codice).then(function () {
+               $timeout(function() { delete coupon.copied;}, 2000);
+            });
          }
 
          $scope.classCardActive = function (ente) {

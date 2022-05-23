@@ -43,7 +43,7 @@
     <h3 class="h3">Non perderti questi coupon</h3>
 </div>
 
-<div class="container-fluid">
+<div class="container-lg">
     <div class="row d-flex justify-content-center" ng-repeat="item in coupons">
         <div class="col-md-6" ng-repeat="elem in item">
             <div class="container mt-5">
@@ -51,10 +51,13 @@
                     <div class="col-md-11">
                         <div class="coupon p-3 bg-white border">
                             <div class="row no-gutters">
-                                <div class="col-md-4 border-end justify-content-center d-flex align-items-center">
+                                <div class="col-md-4 
+                                    border-end-0 border-bottom border-end-md border-bottom-md-0 
+                                    pb-2 mb-2 pb-md-0 mb-md-0 
+                                    justify-content-center d-flex align-items-center">
                                     <div class="d-flex flex-column align-items-center"><img
                                             ng-src="src\ente\{{elem.id_ente}}.jpg" on-error-src="img\company.png"
-                                            class="rounded-circle me-1 coupon-img" ><span
+                                            class="rounded-circle me-1 coupon-img"><span
                                             class="d-block">{{getEnte(elem.id_ente).nome}}</span><span
                                             class="text-black-50">{{getEnte(elem.id_ente).descrizione}}</span></div>
                                 </div>
@@ -68,8 +71,10 @@
                                         <span class="pe-2">
                                             {{elem.descrizione}}
                                         </span>
-                                        <button type="button"
-                                            class="btn btn-outline-success btn-sm mt-auto">{{elem.codice}}</button>
+                                        <button type="button" ng-click="copyCode(elem)"
+                                            ng-class="{'btn-outline-success' : !elem.copied, 'btn-outline-primary' : elem.copied}"
+                                            ng-disabled="elem.copied" class="btn btn-sm mt-auto">{{!elem.copied ?
+                                            elem.codice : 'COPIATO!'}}</button>
                                     </div>
                                 </div>
                             </div>
@@ -80,3 +85,10 @@
         </div>
     </div>
 </div>
+
+<figure class="text-center pt-5" ng-if="coupons.length == 0">
+    <h1 class="display-1"><i class="bi bi-emoji-frown"></i></h1>
+    <blockquote class="blockquote">
+        <p>Mi dispiace, qui non c'è nulla!</p>
+    </blockquote>
+</figure>

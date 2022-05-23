@@ -18,7 +18,7 @@ $dbconn = pg_connect($db_details) or die('Impossibile connetersi: ' . preg_last_
     <title>Document</title>
 
     <!-- css -->
-    <link href="libs\bootstrap-5.1.3-dist\css\bootstrap.min.css" rel="stylesheet">
+    <link href="libs\bootstrap-5.1.3-dist\css\bootstrap-custom.css" rel="stylesheet">
     <link href="libs\bootstrap-icons-1.8.2\font\bootstrap-icons.css" rel="stylesheet">
 
     <link href="css\style.css" rel="stylesheet">
