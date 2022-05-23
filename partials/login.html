@@ -3,7 +3,7 @@
         aria-expanded="false">
         Login
     </a>
-    <div class="dropdown-menu dropdown-menu-end">
+    <div class="dropdown-menu dropdown-menu-end log-in">
         <form class="px-4 py-3" id="formLogin" name="formLogin">
             <div class="d-flex justify-content-center align-items-center overlay" ng-if="loading">
                 <div class="spinner-border" role="status">
@@ -16,31 +16,31 @@
                 <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
             </div>
             <div class="mb-3">
-                <label for="exampleDropdownFormEmail1" class="form-label">Email address</label>
-                <input type="email" class="form-control" id="exampleDropdownFormEmail1" ng-model="loginForm.email"
-                    required placeholder="email@example.com">
+                <label for="DropdownFormEmail" class="form-label"> <i class="bi bi-envelope"></i> Indirizzo e-mail</label>
+                <input type="email" class="form-control" id="DropdownFormEmail" ng-model="loginForm.email"
+                    required autofocus>
             </div>
             <div class="mb-3">
-                <label for="exampleDropdownFormPassword1" class="form-label">Password</label>
-                <input type="password" class="form-control" id="exampleDropdownFormPassword1" ng-model="loginForm.psw"
-                    required placeholder="Password">
+                <label for="DropdownFormPassword" class="form-label"> <i class="bi bi-key"></i> Password </label>
+                <input type="password" class="form-control" id="DropdownFormPassword" ng-model="loginForm.psw"
+                    required>
             </div>
             <div class="mb-3">
                 <div class="form-check">
                     <input type="checkbox" class="form-check-input" id="dropdownCheck"
                         ng-model="loginForm.rememberFlag">
                     <label class="form-check-label" for="dropdownCheck">
-                        Remember me
+                        Ricordami
                     </label>
                 </div>
             </div>
             <button type="submit" class="btn btn-primary" ng-click="formLogin.$valid && signIn()"><span
                     class="spinner-border spinner-border-sm" role="status" aria-hidden="true" ng-if="loading"></span>
-                Sign in</button>
+                Accedi</button>
         </form>
         <div class="dropdown-divider"></div>
         <a class="dropdown-item" data-bs-toggle="modal" data-bs-target="#registerModal"
-            ng-click="toggleLoginDropdownMenu()">New around here? Sign up</a>
+            ng-click="toggleLoginDropdownMenu()">Sei nuovo qui? Registrati  </a>
     </div>
 </li>
 

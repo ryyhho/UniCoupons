@@ -58,3 +58,11 @@
 .card-img-hover-zoom img {
     transition: transform .3s;
 }
+
+
+
+@media screen and (min-width: 480px) {
+    .log-in{
+        width: 280px;
+    }
+}
