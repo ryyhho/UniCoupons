@@ -36,6 +36,7 @@ $dbconn = pg_connect($db_details) or die('Impossibile connetersi: ' . preg_last_
     <script src="libs\angular-1.3.15\libs\jquery.form.min.js"></script>
     <script src="libs\angular-1.3.15\libs\ui-bootstrap-tpls-0.12.1.min.js"></script>
     <script src="libs\bootstrap-5.1.3-dist\js\bootstrap.bundle.min.js"></script>
+    <script src="libs\moment\moment-with-locales.js"></script>
 
     <!-- js -->
     <script src="js\common.js"></script>

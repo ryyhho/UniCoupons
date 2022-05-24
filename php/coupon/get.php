@@ -3,7 +3,7 @@ try {
     session_start();
     $dbconn = pg_connect($_SESSION['db_details']) or die('Impossibile connetersi: ' . preg_last_error());
 
-    $q1 = "select * from coupon order by data_inizio";
+    $q1 = "select * from coupon order by data_fine desc";
     $result = pg_query($dbconn, $q1);
     $array = array();
     while ($line = pg_fetch_array($result, null, PGSQL_ASSOC)) {

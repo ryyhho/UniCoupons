@@ -40,4 +40,8 @@ angular.module('uniCoupons.controllers').controller('uniCoupons.controllers.coup
             return { 'card-active': ente == $scope.enteSelected };
          }
 
+         $scope.isCouponValid = function (date) {
+            return moment(date).isSameOrAfter(moment());
+         }
+
       }]);
