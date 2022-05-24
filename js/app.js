@@ -169,6 +169,10 @@ uniCoupons.config(function(
             url: 'coupons',
             templateUrl : 'partials/coupons.html',
             controller : 'uniCoupons.controllers.coupons'
+        }).state('home.searchCoupons', {
+            url: 'searchCoupons?v',
+            templateUrl : 'partials/search-coupons.html',
+            controller : 'uniCoupons.controllers.searchCoupons'
         });
 
 });

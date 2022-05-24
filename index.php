@@ -48,6 +48,7 @@ $dbconn = pg_connect($db_details) or die('Impossibile connetersi: ' . preg_last_
     <script src="js\controllers\login.js"></script>
     <script src="js\controllers\register.js"></script>
     <script src="js\controllers\coupons.js"></script>
+    <script src="js\controllers\searchCoupons.js"></script>
 
     <script src="js\services\utenteFactory.js"></script>
     <script src="js\services\enteFactory.js"></script>
@@ -67,8 +68,8 @@ $dbconn = pg_connect($db_details) or die('Impossibile connetersi: ' . preg_last_
             </a>
             <div class="collapse navbar-collapse justify-content-end" id="navbar">
                 <form class="d-flex mx-auto">
-                    <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
-                    <button class="btn btn-outline-success" type="submit">Search</button>
+                    <input class="form-control me-2" ng-model="search" type="search" placeholder="Search" aria-label="Search">
+                    <button class="btn btn-outline-success" type="submit" ui-sref="home.searchCoupons({v: search})">Search</button>
                 </form>
                 <ul class="navbar-nav">
                     <!-- view login -->
