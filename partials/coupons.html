@@ -4,7 +4,7 @@
             <div class="col-6">
                 <h3 class="mb-3">I nostri partner </h3>
             </div>
-            <div class="col-6 d-grid gap-2 d-md-flex justify-content-md-end">
+            <div class="col-6 d-grid gap-2 d-md-flex justify-content-md-end d-md-none">
                 <a class="btn btn-primary mb-3 mr-1" href="#carouselPartner" role="button" data-bs-slide="prev">
                     <i class="bi bi-arrow-left-square"></i>
                 </a>
@@ -13,7 +13,7 @@
                 </a>
             </div>
             <div class="col-12">
-                <div id="carouselPartner" class="carousel slide" data-bs-ride="carousel">
+                <div id="carouselPartner" class="carousel carousel-dark slide" data-bs-ride="carousel">
                     <div class="carousel-inner">
                         <div class="carousel-item" ng-class="{active: $first}" ng-repeat="item in enti">
                             <div class="d-flex justify-content-center row">
@@ -33,6 +33,14 @@
                             </div>
                         </div>
                     </div>
+                    <button class="carousel-control-prev carousel-control-sx d-none d-sm-block" type="button" data-bs-target="#carouselPartner" data-bs-slide="prev">
+                        <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                        <span class="visually-hidden">Previous</span>
+                      </button>
+                      <button class="carousel-control-next carousel-control-dx d-none d-sm-block" type="button" data-bs-target="#carouselPartner" data-bs-slide="next">
+                        <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                        <span class="visually-hidden">Next</span>
+                      </button>
                 </div>
             </div>
         </div>

@@ -66,3 +66,31 @@
         width: 280px;
     }
 }
+
+header {
+    padding-bottom: 15px;
+    position: relative;
+    height: 450px;
+    background-image: linear-gradient(#ff9d2f, #ff6126);
+    clip-path: polygon(
+      0 0,
+      100% 0,
+      100% calc(100% - 50px),
+      0 100%
+    );
+    /* change the calc height to a percentage height to get alternate responsive behavior*/
+  }
+
+
+.res-nav{
+    background-image: linear-gradient(#ff9d2f, #ff9d2f);
+}
+
+
+.carousel-control-sx{
+    left: -150px !important;
+}
+
+.carousel-control-dx{
+    right: -150px !important;
+}

@@ -16,5 +16,16 @@ function($scope, $rootScope, utenteFactory) {
       })['finally'](function(res) {
           $scope.loading = false;
       });
+
+
+      
+        $(window).scroll(function() { 
+            if ($(document).scrollTop() > 393) { 
+              $("#nav").removeClass("res-nav")
+            } else {
+              $("#nav").addClass("res-nav"); 
+            }
+          });
+      
    
 }]);

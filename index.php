@@ -58,7 +58,7 @@ $dbconn = pg_connect($db_details) or die('Impossibile connetersi: ' . preg_last_
 
 <body>
     <div class="container-fluid">
-        <nav class="navbar navbar-expand-lg fixed-top navbar-light bg-light px-2">
+        <nav id="nav" class="navbar navbar-expand-lg fixed-top navbar-light bg-light px-2 res-nav">
             <button class="navbar-toggler border-0" type="button" data-bs-toggle="collapse" data-bs-target="#navbar" aria-controls="navbar" aria-expanded="false" aria-label="Toggle navigation">
                 <span class="navbar-toggler-icon"></span>
             </button>
@@ -79,7 +79,7 @@ $dbconn = pg_connect($db_details) or die('Impossibile connetersi: ' . preg_last_
         </nav>
     </div>
     <div ui-view="register"></div>
-
+    <header></header>
     <!-- view -->
     <div ui-view class="py-5"></div>
 </body>
