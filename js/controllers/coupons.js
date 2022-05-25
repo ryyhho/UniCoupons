@@ -29,10 +29,10 @@ angular.module('uniCoupons.controllers').controller('uniCoupons.controllers.coup
             }, 100);
          }
 
-         $scope.copyCode = function(coupon) {
+         $scope.copyCode = function (coupon) {
             coupon.copied = true;
             navigator.clipboard.writeText(coupon.codice).then(function () {
-               $timeout(function() { delete coupon.copied;}, 2000);
+               $timeout(function () { delete coupon.copied; }, 2000);
             });
          }
 
@@ -43,5 +43,13 @@ angular.module('uniCoupons.controllers').controller('uniCoupons.controllers.coup
          $scope.isCouponValid = function (date) {
             return moment(date).isSameOrAfter(moment());
          }
+
+         $(window).scroll(function () {
+            if ($(document).scrollTop() > 393) {
+               $("#nav").removeClass("res-nav")
+            } else {
+               $("#nav").addClass("res-nav");
+            }
+         });
 
       }]);

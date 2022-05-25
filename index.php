@@ -62,7 +62,7 @@ $dbconn = pg_connect($db_details) or die('Impossibile connetersi: ' . preg_last_
             <button class="navbar-toggler border-0" type="button" data-bs-toggle="collapse" data-bs-target="#navbar" aria-controls="navbar" aria-expanded="false" aria-label="Toggle navigation">
                 <span class="navbar-toggler-icon"></span>
             </button>
-            <a class="navbar-brand" href="#">
+            <a class="navbar-brand" ui-sref="home.coupons">
                 <img src="/docs/5.1/assets/brand/bootstrap-logo.svg" alt="" width="30" height="24" class="d-inline-block align-text-top">
                 UniCoupons
             </a>
@@ -79,7 +79,6 @@ $dbconn = pg_connect($db_details) or die('Impossibile connetersi: ' . preg_last_
         </nav>
     </div>
     <div ui-view="register"></div>
-    <header></header>
     <!-- view -->
     <div ui-view class="py-5"></div>
 </body>

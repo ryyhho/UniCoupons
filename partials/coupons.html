@@ -1,3 +1,5 @@
+<header></header>
+
 <section class="pt-5 pb-5">
     <div class="container">
         <div class="row">
@@ -33,14 +35,16 @@
                             </div>
                         </div>
                     </div>
-                    <button class="carousel-control-prev carousel-control-sx d-none d-sm-block" type="button" data-bs-target="#carouselPartner" data-bs-slide="prev">
+                    <button class="carousel-control-prev carousel-control-sx d-none d-sm-block" type="button"
+                        data-bs-target="#carouselPartner" data-bs-slide="prev">
                         <span class="carousel-control-prev-icon" aria-hidden="true"></span>
                         <span class="visually-hidden">Previous</span>
-                      </button>
-                      <button class="carousel-control-next carousel-control-dx d-none d-sm-block" type="button" data-bs-target="#carouselPartner" data-bs-slide="next">
+                    </button>
+                    <button class="carousel-control-next carousel-control-dx d-none d-sm-block" type="button"
+                        data-bs-target="#carouselPartner" data-bs-slide="next">
                         <span class="carousel-control-next-icon" aria-hidden="true"></span>
                         <span class="visually-hidden">Next</span>
-                      </button>
+                    </button>
                 </div>
             </div>
         </div>
@@ -73,8 +77,11 @@
                                     <div class="d-flex flex-row justify-content-between off px-3">
                                         <div class="d-flex justify-content-start">
                                             <span class="lh-sm" ng-if="elem.data_fine">
-                                                <small ng-if="isCouponValid(elem.data_fine)" class="text-muted">Valido fino al: <br>{{elem.data_fine | date:'dd/MM/yyyy'}}</small>
-                                                <small ng-if="!isCouponValid(elem.data_fine)" class="text-danger">Scaduto il: <br>{{elem.data_fine | date:'dd/MM/yyyy'}}</small>
+                                                <small ng-if="isCouponValid(elem.data_fine)" class="text-muted">Valido
+                                                    fino al: <br>{{elem.data_fine | date:'dd/MM/yyyy'}}</small>
+                                                <small ng-if="!isCouponValid(elem.data_fine)"
+                                                    class="text-danger">Scaduto il: <br>{{elem.data_fine |
+                                                    date:'dd/MM/yyyy'}}</small>
                                             </span>
                                         </div>
                                         <div class="d-flex justify-content-end">
