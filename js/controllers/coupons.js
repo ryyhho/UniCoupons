@@ -2,15 +2,19 @@ angular.module('uniCoupons.controllers').controller('uniCoupons.controllers.coup
    ['$scope', '$rootScope', '$filter', '$timeout', 'uniCoupons.services.enteFactory', 'uniCoupons.services.couponFactory',
       function ($scope, $rootScope, $filter, $timeout, enteFactory, couponFactory) {
 
-         enteFactory.get().then(function (res) {
-            $scope.entiList = res.data;
-            $scope.enti = utils.groupArr($scope.entiList, 3);
-         });
+         $scope.init = function () {
+            enteFactory.get().then(function (res) {
+               $scope.entiList = res.data;
+               $scope.enti = utils.groupArr($scope.entiList, 3);
+            });
 
-         couponFactory.get().then(function (res) {
-            $scope.couponsList = res.data;
-            $scope.coupons = utils.groupArr($scope.couponsList, 2);
-         });
+            couponFactory.get().then(function (res) {
+               $scope.couponsList = res.data;
+               $scope.coupons = utils.groupArr($scope.couponsList, 2);
+            });
+         }
+
+         $scope.init();
 
          $scope.getEnte = function (id_ente) {
             return $filter('filter')($scope.entiList, { id_ente: id_ente }, true)[0];
@@ -45,7 +49,7 @@ angular.module('uniCoupons.controllers').controller('uniCoupons.controllers.coup
          }
 
          $(window).scroll(function () {
-            if ($(document).scrollTop() > 393) {
+            if ($(document).scrollTop() > $("#header").height()) {
                $("#nav").removeClass("res-nav")
             } else {
                $("#nav").addClass("res-nav");

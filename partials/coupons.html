@@ -1,10 +1,12 @@
-<header></header>
+<header id="header"></header>
 
 <section class="pt-5 pb-5">
     <div class="container">
         <div class="row">
             <div class="col-6">
                 <h3 class="mb-3">I nostri partner </h3>
+                <a data-bs-target="#nuovoEnteModal" data-bs-toggle="modal" 
+                        ng-if="utente && utente.admin" class="btn btn-sm mt-auto">Nuovo Ente</a>
             </div>
             <div class="col-6 d-grid gap-2 d-md-flex justify-content-md-end d-md-none">
                 <a class="btn btn-primary mb-3 mr-1" href="#carouselPartner" role="button" data-bs-slide="prev">
@@ -53,6 +55,8 @@
 
 <div class="text-center" id="couponsSection">
     <h3 class="h3">Non perderti questi coupon</h3>
+    <a data-bs-target="#nuovoCouponModal" data-bs-toggle="modal" 
+            ng-if="utente" class="btn btn-sm mt-auto">Nuovo Coupon</a>
 </div>
 
 <div class="container-lg">
@@ -115,3 +119,6 @@
         <p>Mi dispiace, qui non c'è nulla!</p>
     </blockquote>
 </figure>
+
+<div ui-view="nuovoEnte"></div>
+<div ui-view="nuovoCoupon"></div>

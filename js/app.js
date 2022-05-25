@@ -167,8 +167,21 @@ uniCoupons.config(function(
             }
         }).state('home.coupons', {
             url: 'coupons',
-            templateUrl : 'partials/coupons.html',
-            controller : 'uniCoupons.controllers.coupons'
+            views: {
+                '' : {
+                    templateUrl : 'partials/coupons.html',
+                    controller : 'uniCoupons.controllers.coupons'
+                },
+                'nuovoCoupon@home.coupons' : {
+                    templateUrl : 'partials/nuovo-coupon.html',
+                    controller : 'uniCoupons.controllers.nuovoCoupon'
+                },
+                'nuovoEnte@home.coupons' : {
+                    templateUrl : 'partials/nuovo-ente.html',
+                    controller : 'uniCoupons.controllers.nuovoEnte'
+                }
+
+            }
         }).state('home.searchCoupons', {
             url: 'searchCoupons?v',
             templateUrl : 'partials/search-coupons.html',

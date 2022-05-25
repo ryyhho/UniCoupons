@@ -7,6 +7,9 @@ angular.module('uniCoupons.services').factory('uniCoupons.services.couponFactory
 			},
 			search: function (obj) {
 				return $http.get(urlBase + '/search' + PHP_EXT + utils.params(obj));
+			},
+			post: function (obj) {
+				return $http.post(urlBase + '/post' + PHP_EXT, obj);
 			}
 	  	};
 	}

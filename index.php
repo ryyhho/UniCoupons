@@ -49,6 +49,8 @@ $dbconn = pg_connect($db_details) or die('Impossibile connetersi: ' . preg_last_
     <script src="js\controllers\register.js"></script>
     <script src="js\controllers\coupons.js"></script>
     <script src="js\controllers\searchCoupons.js"></script>
+    <script src="js\controllers\nuovoCoupon.js"></script>
+    <script src="js\controllers\nuovoEnte.js"></script>
 
     <script src="js\services\utenteFactory.js"></script>
     <script src="js\services\enteFactory.js"></script>
@@ -58,7 +60,7 @@ $dbconn = pg_connect($db_details) or die('Impossibile connetersi: ' . preg_last_
 
 <body>
     <div class="container-fluid">
-        <nav id="nav" class="navbar navbar-expand-lg fixed-top navbar-light bg-light px-2 res-nav">
+        <nav id="nav" class="navbar navbar-expand-lg nav-transition fixed-top navbar-light bg-light px-2 res-nav">
             <button class="navbar-toggler border-0" type="button" data-bs-toggle="collapse" data-bs-target="#navbar" aria-controls="navbar" aria-expanded="false" aria-label="Toggle navigation">
                 <span class="navbar-toggler-icon"></span>
             </button>
