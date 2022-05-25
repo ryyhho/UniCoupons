@@ -10,4 +10,19 @@ directives.directive('onErrorSrc', function() {
           });
         }
     }
-});
+}).directive("ngFileRead", [function () {
+  return {
+      scope: {
+          ngFileRead: "="
+      },
+      link: function (scope, element, attributes) {
+          element.bind("change", function (changeEvent) {
+              scope.$apply(function () {
+                  scope.ngFileRead = changeEvent.target.files[0];
+                  // or all selected files:
+                  // scope.fileread = changeEvent.target.files;
+              });
+          });
+      }
+  }
+}]);

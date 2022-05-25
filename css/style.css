@@ -18,6 +18,18 @@
     object-fit: cover;
 }
 
+.input-img {
+    height: 14em !important;
+    width: 14em !important;
+    object-fit: cover;
+    cursor: pointer;
+    transition: background-color .3s;
+}
+
+.input-img:hover {
+    background-color: rgba(0, 0, 0, .125);
+}
+
 .card:hover,
 .card:focus {
     color: #1e2125;

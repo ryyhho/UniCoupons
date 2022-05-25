@@ -4,32 +4,18 @@ angular.module('uniCoupons.controllers').controller('uniCoupons.controllers.nuov
 
             $scope.nuovoEnteForm = {};
 
-            enteFactory.get().then(function (res) {
-                $scope.entiList = res.data;
-            });
-
-            $scope.updateImporto = function () {
-                if ($scope.gratis) {
-                    $scope.nuovoCouponForm.titolo = 0;
-                    delete $scope.nuovoCouponForm.euro_perc;
-                } else {
-                    delete $scope.nuovoCouponForm.titolo;
-                    $scope.nuovoCouponForm.euro_perc = false;
-                }
-            }
-
-            $scope.insertCoupon = function () {
+            $scope.insertEnte = function () {
 
                 $scope.error = false;
                 $scope.errorMsg = "";
 
                 $scope.loading = true;
 
-                couponFactory.post($scope.nuovoCouponForm).then(
+                enteFactory.post($scope.nuovoEnteForm).then(
                     function (res) {
                         $scope.init();
-                        $scope.nuovoCouponForm = {};
-                        $('#nuovoCouponModal').modal('hide');
+                        $scope.nuovoEnteForm = {};
+                        $('#nuovoEnteModal').modal('hide');
                     },
                     function (err) {
 
@@ -44,5 +30,15 @@ angular.module('uniCoupons.controllers').controller('uniCoupons.controllers.nuov
                     });
 
             };
+
+            $scope.selectImage = function() {
+                $('#enteImg').click();
+            }
+
+            $scope.$watch('enteImg', function(newValue, oldValue) {
+                if (newValue) {
+                    $("#inputImg").attr("src",URL.createObjectURL(newValue));
+                }
+            });
 
         }]);
