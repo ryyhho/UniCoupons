@@ -1,12 +1,14 @@
 <header id="header"></header>
 
 <section class="pt-5 pb-5">
-    <div class="container">
+    <div class="container p-3">
         <div class="row">
-            <div class="col-6">
-                <h3 class="mb-3">I nostri partner </h3>
+            <div class="col-md-6">
+                <h3 class="h3">I nostri partner </h3>
+            </div>
+            <div class="col-md-6 text-end d-none d-sm-block">
                 <a data-bs-target="#nuovoEnteModal" data-bs-toggle="modal" 
-                        ng-if="utente && utente.admin" class="btn btn-sm mt-auto">Nuovo Ente</a>
+                        ng-if="utente && utente.admin" class="btn mt-auto border border-dark rounded-pill"> <i class="bi bi-building"></i> Nuovo Ente</a>
             </div>
             <div class="col-6 d-grid gap-2 d-md-flex justify-content-md-end d-md-none">
                 <a class="btn btn-primary mb-3 mr-1" href="#carouselPartner" role="button" data-bs-slide="prev">
@@ -16,7 +18,7 @@
                     <i class="bi bi-arrow-right-square"></i>
                 </a>
             </div>
-            <div class="col-12">
+            <div class="col-12 pt-5">
                 <div id="carouselPartner" class="carousel carousel-dark slide" data-bs-ride="carousel">
                     <div class="carousel-inner">
                         <div class="carousel-item" ng-class="{active: $first}" ng-repeat="item in enti">
@@ -53,10 +55,19 @@
     </div>
 </section>
 
-<div class="text-center" id="couponsSection">
-    <h3 class="h3">Non perderti questi coupon</h3>
-    <a data-bs-target="#nuovoCouponModal" data-bs-toggle="modal" 
-            ng-if="utente" class="btn btn-sm mt-auto">Nuovo Coupon</a>
+<div id="couponsSection">
+    <div class="container">
+        <div class="row justify-content-md-center">
+            <div class="col-md-2 text-end d-none d-sm-block"></div>
+            <div class="col-md-8 col-sm-12 text-center">
+                <h3 class="h3 d">Non perderti questi coupon</h3>
+            </div>
+            <div class="col-md-2 text-end d-none d-sm-block">
+                <a data-bs-target="#nuovoCouponModal" data-bs-toggle="modal" 
+                        ng-if="utente" class="btn mt-auto border border-dark rounded-pill"> <i class="bi bi-patch-plus"></i> Nuovo Coupon</a>
+            </div>
+        </div>
+    </div>
 </div>
 
 <div class="container-lg">

@@ -70,8 +70,8 @@ $dbconn = pg_connect($db_details) or die('Impossibile connetersi: ' . preg_last_
             </a>
             <div class="collapse navbar-collapse justify-content-end" id="navbar">
                 <form class="d-flex mx-auto">
-                    <input class="form-control me-2" ng-model="search" type="search" placeholder="Search" aria-label="Search">
-                    <button class="btn btn-outline-success" type="submit" ui-sref="home.searchCoupons({v: search})">Search</button>
+                    <input class="form-control me-2 rounded-start" ng-model="search" type="search" placeholder="Search" aria-label="Search">
+                    <button class="btn btn-outline-dark mt-auto " type="submit" ui-sref="home.searchCoupons({v: search})">Search</button>
                 </form>
                 <ul class="navbar-nav">
                     <!-- view login -->

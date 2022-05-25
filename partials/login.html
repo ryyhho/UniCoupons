@@ -1,8 +1,8 @@
 <li class="nav-item dropdown" ng-if="!utente">
-    <a class="nav-link" role="button" id="loginDropdownMenu" data-bs-toggle="dropdown" data-bs-auto-close="outside"
+    <button class="nav-link btn btn-outline-dark mt-auto" role="button" id="loginDropdownMenu" data-bs-toggle="dropdown" data-bs-auto-close="outside"
         aria-expanded="false">
-        Login
-    </a>
+        <i class="bi bi-lock"></i> Login
+    </button>
     <div class="dropdown-menu dropdown-menu-end log-in">
         <form class="px-4 py-3" id="formLogin" name="formLogin">
             <div class="d-flex justify-content-center align-items-center overlay" ng-if="loading">
@@ -34,13 +34,13 @@
                     </label>
                 </div>
             </div>
-            <button type="submit" class="btn btn-primary" ng-click="formLogin.$valid && signIn()"><span
+            <button type="submit" class="btn mt-auto border border-dark rounded-pill" ng-click="formLogin.$valid && signIn()"><span
                     class="spinner-border spinner-border-sm" role="status" aria-hidden="true" ng-if="loading"></span>
                 Accedi</button>
         </form>
         <div class="dropdown-divider"></div>
         <a class="dropdown-item" data-bs-toggle="modal" data-bs-target="#registerModal"
-            ng-click="toggleLoginDropdownMenu()">Nuovo arrivato? Registrati! </a>
+            ng-click="toggleLoginDropdownMenu()">Nuovo arrivato? Registrati! <i class="bi bi-person-plus"></i> </a>
     </div>
 </li>
 
