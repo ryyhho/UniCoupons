@@ -1,14 +1,20 @@
+<script>
+    var tooltipTriggerList = [].slice.call(document.querySelectorAll('[data-bs-toggle="tooltip"]'))
+    var tooltipList = tooltipTriggerList.map(function (tooltipTriggerEl) {
+        return new bootstrap.Tooltip(tooltipTriggerEl)
+    })
+</script>
 <div class="modal fade" id="nuovoEnteModal" tabindex="-1" aria-labelledby="nuovoEnteModalLabel" aria-hidden="true">
     <div class="modal-dialog modal-dialog-centered modal-lg modal-fullscreen-sm-down">
         <div class="modal-content">
-            <form id="formEnte" name="formEnte">
+            <form id="formNuovoEnte" name="formNuovoEnte">
                 <div class="d-flex justify-content-center align-items-center overlay" ng-if="loading">
                     <div class="spinner-border" role="status">
                         <span class="visually-hidden">Loading...</span>
                     </div>
                 </div>
                 <div class="modal-header">
-                    <h5 class="modal-title" id="nuovoEnteModalLabel">Nuovo ente</h5>
+                    <h5 class="modal-title" id="nuovoEnteModalLabel">Nuovo Ente</h5>
                     <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                 </div>
                 <div class="modal-body">
@@ -19,25 +25,36 @@
                     </div>
                     <div class="container-fluid">
                         <div class="mb-3 row">
-                            <div class="col-md-6">
+                            <div class="col-md-12 d-flex flex-column text-center">
+                                <a class="rounded-circle mx-auto" data-bs-toggle="tooltip" data-bs-placement="right" title="Seleziona file" 
+                                    ng-click="selectImage()">
+                                    <img src="img\company.png" id="inputImg"
+                                        class="rounded-circle img-thumbnail input-img w-25 mx-auto" />
+                                </a>
+                                <label for="formFile" class="form-label pt-2">Logo dell'ente</label>
+                                <input class="form-control visually-hidden" type="file" id="enteImg" ng-file-read="enteImg">
+                            </div>
+                        </div>
+                        <div class="mb-3 row">
+                            <div class="col-md-8">
                                 <label for="nome" class="form-label">Nome</label>
-                                <input type="text" class="form-control" id="nome" ng-model="signupForm.nome" maxlength="20" required placeholder="Inserisci il nome dell'ente">
+                                <input type="text" class="form-control" id="nome" ng-model="nuovoEnteForm.nome"
+                                    maxlength="20" required placeholder="Inserisci il nome dell'ente">
                             </div>
-                            <div class="col-md-6">
+                        </div>
+                        <div class="mb-3 row">
+                            <div class="col-md-12">
                                 <label for="descrizione" class="form-label">Descrizione</label>
-                                <input type="text" class="form-control" id="descrizione" ng-model="signupForm.cognome" maxlength="150"
-                                 placeholder="Descrizione o motto dell'ente">
+                                <textarea id="descrizione" class="form-control" rows="3"
+                                    ng-model="nuovoEnteForm.descrizione" placeholder="Descrizione o motto dell'ente"
+                                    maxlength="150"></textarea>
                             </div>
-                            <div class="mb-3 row">
-                                <label for="logo" class="form-label">Logo</label>
-                                <input type="file" class="form-control" id="logo" aria-label="file example" required>
-                              </div>
                         </div>
                     </div>
                 </div>
                 <div class="modal-footer">
                     <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Chiudi</button>
-                    <button type="submit" class="btn btn-primary" ng-click="formSignup.$valid && signUp()">
+                    <button type="submit" class="btn btn-primary" ng-click="formNuovoEnte.$valid && insertEnte()">
                         <span class="spinner-border spinner-border-sm" role="status" aria-hidden="true"
                             ng-if="loading"></span>
                         Conferma</button>
@@ -46,5 +63,3 @@
         </div>
     </div>
 </div>
-
-    
