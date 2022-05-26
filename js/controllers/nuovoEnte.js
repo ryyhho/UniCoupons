@@ -1,6 +1,6 @@
 angular.module('uniCoupons.controllers').controller('uniCoupons.controllers.nuovoEnte',
-    ['$scope', '$rootScope', 'uniCoupons.services.enteFactory', 'uniCoupons.services.couponFactory',
-        function ($scope, $rootScope, enteFactory, couponFactory) {
+    ['$scope', '$rootScope', 'uniCoupons.services.enteFactory', 'uniCoupons.services.imageFactory',
+        function ($scope, $rootScope, enteFactory, imageFactory) {
 
             $scope.nuovoEnteForm = {};
 
@@ -13,9 +13,30 @@ angular.module('uniCoupons.controllers').controller('uniCoupons.controllers.nuov
 
                 enteFactory.post($scope.nuovoEnteForm).then(
                     function (res) {
-                        $scope.init();
-                        $scope.nuovoEnteForm = {};
-                        $('#nuovoEnteModal').modal('hide');
+                        if ($scope.enteImg)
+                            imageFactory.upload($scope.enteImg, "ente/"+res.data.id_ente).then(
+                                function (res1) {
+                                    $scope.init();
+                                    $scope.nuovoEnteForm = {};
+                                    delete $scope.enteImg;
+                                    $('#nuovoEnteModal').modal('hide');
+                                },
+                                function (err) {
+
+                                    if (err.status == 0) {
+                                    } else {
+                                        $scope.error = true;
+                                        $scope.errorMsg = err.data.msg;
+                                    }
+                                    console.log('Errore:', err);
+                                })['finally'](function (res) {
+                                    $scope.loading = false;
+                                });
+                        else {
+                            $scope.init();
+                            $scope.nuovoEnteForm = {};
+                            $('#nuovoEnteModal').modal('hide');
+                        }
                     },
                     function (err) {
 
@@ -25,19 +46,17 @@ angular.module('uniCoupons.controllers').controller('uniCoupons.controllers.nuov
                             $scope.errorMsg = err.data.msg;
                         }
                         console.log('Errore:', err);
-                    })['finally'](function(res) {
                         $scope.loading = false;
                     });
-
             };
 
-            $scope.selectImage = function() {
+            $scope.selectImage = function () {
                 $('#enteImg').click();
             }
 
-            $scope.$watch('enteImg', function(newValue, oldValue) {
+            $scope.$watch('enteImg', function (newValue, oldValue) {
                 if (newValue) {
-                    $("#inputImg").attr("src",URL.createObjectURL(newValue));
+                    $("#inputImg").attr("src", URL.createObjectURL(newValue));
                 }
             });
 

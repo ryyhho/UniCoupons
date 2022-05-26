@@ -13,11 +13,13 @@ try {
 
         $q2 = 'INSERT INTO ente
         (nome, descrizione) 
-        VALUES ($1, $2)';
+        VALUES ($1, $2) RETURNING id_ente';
         $result = pg_query_params($dbconn, $q2, array($nome, $descrizione));
-        if (pg_affected_rows($result) <= 0)
+        if($line = pg_fetch_array($result, null, PGSQL_ASSOC)){
+            echo json_encode($line);
+        } else
             throw new Exception('Errore nella creazione di un nuovo ente', 500);
-            echo pg_affected_rows($result);
+        
     } else
         throw new Exception('Inserire dati', 400);
 } catch (Exception $e) {
