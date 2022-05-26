@@ -7,8 +7,8 @@
                 <h3 class="h3">I nostri partner </h3>
             </div>
             <div class="col-md-6 text-end d-none d-sm-block">
-                <a data-bs-target="#nuovoEnteModal" data-bs-toggle="modal" 
-                        ng-if="utente && utente.admin" class="btn mt-auto border border-dark rounded-pill"> <i class="bi bi-building"></i> Nuovo Ente</a>
+                <a data-bs-target="#nuovoEnteModal" data-bs-toggle="modal" ng-if="utente && utente.admin"
+                    class="btn mt-auto border border-dark rounded-pill"> <i class="bi bi-building"></i> Nuovo Ente</a>
             </div>
             <div class="col-6 d-grid gap-2 d-md-flex justify-content-md-end d-md-none">
                 <a class="btn btn-primary mb-3 mr-1" href="#carouselPartner" role="button" data-bs-slide="prev">
@@ -63,8 +63,9 @@
                 <h3 class="h3 d">Non perderti questi coupon</h3>
             </div>
             <div class="col-md-2 text-end d-none d-sm-block">
-                <a data-bs-target="#nuovoCouponModal" data-bs-toggle="modal" 
-                        ng-if="utente" class="btn mt-auto border border-dark rounded-pill"> <i class="bi bi-patch-plus"></i> Nuovo Coupon</a>
+                <a data-bs-target="#nuovoCouponModal" data-bs-toggle="modal" ng-if="utente"
+                    class="btn mt-auto border border-dark rounded-pill"> <i class="bi bi-patch-plus"></i> Nuovo
+                    Coupon</a>
             </div>
         </div>
     </div>
@@ -130,6 +131,19 @@
         <p>Mi dispiace, qui non c'è nulla!</p>
     </blockquote>
 </figure>
+
+<div class="btn-group dropup d-md-none" ng-if="utente">
+    <button type="button" class="btn btn-dark btn-lg rounded-circle shadow-lg position-fixed bottom-0 end-0 m-5 p-3 ng-scope"
+        data-bs-toggle="dropdown" aria-expanded="false">
+        <i class="bi bi-plus-lg m-1"></i>
+    </button>
+    <div class="dropdown-menu dropdown-menu-end shadow-lg mb-1">
+        <a data-bs-target="#nuovoCouponModal" data-bs-toggle="modal" ng-if="utente" class="dropdown-item"> <i
+                class="bi bi-patch-plus"></i> Nuovo Coupon</a>
+        <a data-bs-target="#nuovoEnteModal" data-bs-toggle="modal" ng-if="utente && utente.admin" class="dropdown-item">
+            <i class="bi bi-building"></i> Nuovo Ente</a>
+    </div>
+</div>
 
 <div ui-view="nuovoEnte"></div>
 <div ui-view="nuovoCoupon"></div>
