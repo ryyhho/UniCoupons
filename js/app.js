@@ -186,6 +186,12 @@ uniCoupons.config(function(
             url: 'searchCoupons?v',
             templateUrl : 'partials/search-coupons.html',
             controller : 'uniCoupons.controllers.searchCoupons'
+
+        }).state('home.mineCoupons', {
+            url: 'mineCoupons',
+            templateUrl : 'partials/mine-coupons.html',
+            controller : 'uniCoupons.controllers.mineCoupons'
         });
+
 
 });

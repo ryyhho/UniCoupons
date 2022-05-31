@@ -10,6 +10,9 @@ angular.module('uniCoupons.services').factory('uniCoupons.services.couponFactory
 			},
 			post: function (obj) {
 				return $http.post(urlBase + '/post' + PHP_EXT, obj);
+			},
+			mine: function () {
+				return $http.get(urlBase + '/mine' + PHP_EXT);
 			}
 	  	};
 	}

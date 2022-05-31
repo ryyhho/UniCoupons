@@ -51,6 +51,7 @@ $dbconn = pg_connect($db_details) or die('Impossibile connetersi: ' . preg_last_
     <script src="js\controllers\searchCoupons.js"></script>
     <script src="js\controllers\nuovoCoupon.js"></script>
     <script src="js\controllers\nuovoEnte.js"></script>
+    <script src="js\controllers\mineCoupons.js"></script>
 
     <script src="js\services\utenteFactory.js"></script>
     <script src="js\services\enteFactory.js"></script>
