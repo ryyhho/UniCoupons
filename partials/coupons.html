@@ -1,4 +1,6 @@
-<header id="header"></header>
+<header id="header">
+   
+</header>
 
 <section class="pt-5 pb-5">
     <div class="container p-3">
@@ -8,10 +10,10 @@
             </div>
             <div class="col-md-6 text-end d-none d-sm-block">
                 <a data-bs-target="#nuovoEnteModal" data-bs-toggle="modal" ng-if="utente && utente.admin"
-                    class="btn mt-auto border border-dark rounded-pill"> <i class="bi bi-building"></i> Nuovo Ente</a>
+                    class="btn btn-outline-dark rounded-pill mt-auto"> <i class="bi bi-building"></i> Nuovo Ente</a>
             </div>
-            <div class="col-6 d-grid gap-2 d-md-flex justify-content-md-end d-md-none">
-                <a class="btn btn-primary mb-3 mr-1" href="#carouselPartner" role="button" data-bs-slide="prev">
+            <div class="col-md-6  d-md-none text-end">
+                <a class="btn btn-primary mb-3 pr-3" href="#carouselPartner" role="button" data-bs-slide="prev">
                     <i class="bi bi-arrow-left-square"></i>
                 </a>
                 <a class="btn btn-primary mb-3 " href="#carouselPartner" role="button" data-bs-slide="next">
@@ -32,7 +34,7 @@
                                         </div>
                                         <div class="card-body">
                                             <h4 class="card-title">{{elem.nome}}</h4>
-                                            <p class="card-text">{{elem.descrizione}}</p>
+                                            <p class="card-text text-truncate">{{elem.descrizione}}</p>
                                         </div>
                                     </div>
                                 </div>
@@ -64,7 +66,7 @@
             </div>
             <div class="col-md-2 text-end d-none d-sm-block">
                 <a data-bs-target="#nuovoCouponModal" data-bs-toggle="modal" ng-if="utente"
-                    class="btn mt-auto border border-dark rounded-pill"> <i class="bi bi-patch-plus"></i> Nuovo
+                    class="btn btn-outline-dark rounded-pill mt-auto"> <i class="bi bi-patch-plus"></i> Nuovo
                     Coupon</a>
             </div>
         </div>
@@ -87,7 +89,7 @@
                                             ng-src="src\ente\{{elem.id_ente}}.jpg" on-error-src="img\company.png"
                                             class="rounded-circle me-1 coupon-img"><span
                                             class="d-block">{{getEnte(elem.id_ente).nome}}</span><span
-                                            class="text-black-50">{{getEnte(elem.id_ente).descrizione}}</span></div>
+                                            class="text-black-50 text-truncate truncate-width">{{getEnte(elem.id_ente).descrizione}}</span></div>
                                 </div>
                                 <div class="col-md-8 d-flex flex-column justify-content-between">
                                     <div class="d-flex flex-row justify-content-between off px-3">
@@ -107,11 +109,11 @@
                                         </div>
                                     </div>
                                     <div class="d-flex flex-row justify-content-between off px-3 p-2">
-                                        <span class="pe-2">
+                                        <span class="pe-2 text-truncate" style="max-width: 170px;">
                                             {{elem.descrizione}}
                                         </span>
                                         <button type="button" ng-click="copyCode(elem)"
-                                            ng-class="{'btn-outline-success' : !elem.copied, 'btn-outline-primary' : elem.copied}"
+                                            ng-class="{'codeButton' : !elem.copied, 'btn-outline-success' : elem.copied}"
                                             ng-disabled="elem.copied" class="btn btn-sm mt-auto">{{!elem.copied ?
                                             elem.codice : 'COPIATO!'}}</button>
                                     </div>
@@ -138,9 +140,9 @@
         <i class="bi bi-plus-lg m-1"></i>
     </button>
     <div class="dropdown-menu dropdown-menu-end shadow-lg mb-1">
-        <a data-bs-target="#nuovoCouponModal" data-bs-toggle="modal" ng-if="utente" class="dropdown-item"> <i
+        <a data-bs-target="#nuovoCouponModal" data-bs-toggle="modal" ng-if="utente" class="dropdown-item menuClick"> <i
                 class="bi bi-patch-plus"></i> Nuovo Coupon</a>
-        <a data-bs-target="#nuovoEnteModal" data-bs-toggle="modal" ng-if="utente && utente.admin" class="dropdown-item">
+        <a data-bs-target="#nuovoEnteModal" data-bs-toggle="modal" ng-if="utente && utente.admin" class="dropdown-item menuClick">
             <i class="bi bi-building"></i> Nuovo Ente</a>
     </div>
 </div>

@@ -38,26 +38,26 @@
                         <div class="mb-3 row">
                             <div class="col-md-8">
                                 <label for="nome" class="form-label">Nome</label>
-                                <input type="text" class="form-control" id="nome" ng-model="nuovoEnteForm.nome"
+                                <input type="text" class="form-control shadow" id="nome" ng-model="nuovoEnteForm.nome"
                                     maxlength="20" required placeholder="Inserisci il nome dell'ente">
                             </div>
                         </div>
                         <div class="mb-3 row">
                             <div class="col-md-12">
                                 <label for="descrizione" class="form-label">Descrizione</label>
-                                <textarea id="descrizione" class="form-control" rows="3"
-                                    ng-model="nuovoEnteForm.descrizione" placeholder="Descrizione o motto dell'ente"
+                                <textarea id="descrizione" class="form-control shadow" rows="3"
+                                    ng-model="nuovoEnteForm.descrizione" placeholder="Descrizione o slogan dell'ente"
                                     maxlength="150"></textarea>
                             </div>
                         </div>
                     </div>
                 </div>
                 <div class="modal-footer">
-                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Chiudi</button>
-                    <button type="submit" class="btn btn-primary" ng-click="formNuovoEnte.$valid && insertEnte()">
+                    <button type="button" class="btn btn-outline-danger" data-bs-dismiss="modal"> <i class="bi bi-x-lg"></i> Chiudi</button>
+                    <button type="submit" class="btn btn-outline-success" ng-click="formNuovoEnte.$valid && insertEnte()">
                         <span class="spinner-border spinner-border-sm" role="status" aria-hidden="true"
                             ng-if="loading"></span>
-                        Conferma</button>
+                        <i class="bi bi-box-arrow-in-right"></i> Conferma</button>
                 </div>
             </form>
         </div>

@@ -20,36 +20,38 @@
                     <div class="container-fluid">
                         <div class="mb-3 row">
                             <div class="col-md-6">
-                                <label for="email" class="form-label">Email address</label>
-                                <input type="email" class="form-control" id="email" ng-model="signupForm.email" required
-                                    placeholder="email@example.com">
+                                <label for="nome" class="form-label">Nome</label>
+                                <input type="text" class="form-control shadow" id="nome" ng-model="signupForm.nome" required
+                                    placeholder="Inserisci il tuo nome">
                             </div>
                             <div class="col-md-6">
-                                <label for="psw" class="form-label">Password</label>
-                                <input type="password" class="form-control" id="psw" ng-model="signupForm.psw" required
-                                    placeholder="Password">
+                                <label for="cognome" class="form-label">Cognome</label>
+                                <input type="text" class="form-control shadow" id="cognome" ng-model="signupForm.cognome"
+                                    required placeholder="Inserisci il tuo cognome">
                             </div>
                         </div>
                         <div class="mb-3 row">
                             <div class="col-md-6">
-                                <label for="nome" class="form-label">Nome</label>
-                                <input type="text" class="form-control" id="nome" ng-model="signupForm.nome" required
-                                    placeholder="email@example.com">
+                                <label for="email" class="form-label">Indirizzo e-mail</label>
+                                <input type="email" class="form-control shadow" id="email" ng-model="signupForm.email" required
+                                    placeholder="Inserisci l'e-mail">
                             </div>
+                        </div>
+                        <div class="mb-3 row">
                             <div class="col-md-6">
-                                <label for="cognome" class="form-label">Cognome</label>
-                                <input type="text" class="form-control" id="cognome" ng-model="signupForm.cognome"
-                                    required placeholder="Password">
+                                <label for="psw" class="form-label">Password</label>
+                                <input type="password" class="form-control shadow" id="psw" ng-model="signupForm.psw" required
+                                    placeholder="Inserisci la password">
                             </div>
                         </div>
                     </div>
                 </div>
                 <div class="modal-footer">
-                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Chiudi</button>
-                    <button type="submit" class="btn btn-primary" ng-click="formSignup.$valid && signUp()">
+                    <button type="button" class="btn btn-outline-danger" data-bs-dismiss="modal"> <i class="bi bi-x-lg"></i> Chiudi</button>
+                    <button type="submit" class="btn btn-outline-success" ng-click="formSignup.$valid && signUp()">
                         <span class="spinner-border spinner-border-sm" role="status" aria-hidden="true"
                             ng-if="loading"></span>
-                        Conferma</button>
+                        <i class="bi bi-box-arrow-in-right"></i> Conferma</button>
                 </div>
             </form>
         </div>

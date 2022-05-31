@@ -15,7 +15,7 @@ $dbconn = pg_connect($db_details) or die('Impossibile connetersi: ' . preg_last_
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>UniCoupons</title>
 
     <!-- css -->
     <link href="libs\bootstrap-5.1.3-dist\css\bootstrap-custom.css" rel="stylesheet">
@@ -71,8 +71,8 @@ $dbconn = pg_connect($db_details) or die('Impossibile connetersi: ' . preg_last_
             </a>
             <div class="collapse navbar-collapse justify-content-end" id="navbar">
                 <form class="d-flex mx-auto">
-                    <input class="form-control me-2 rounded-start" ng-model="search" type="search" placeholder="Search" aria-label="Search">
-                    <button class="btn btn-outline-dark mt-auto " type="submit" ui-sref="home.searchCoupons({v: search})">Search</button>
+                    <input class="form-control me-2 rounded-start space" ng-model="search" type="search" placeholder="Search" aria-label="Search">
+                    <button class="btn btn-outline-dark mt-auto space" type="submit" ui-sref="home.searchCoupons({v: search})">Search</button>
                 </form>
                 <ul class="navbar-nav">
                     <!-- view login -->
