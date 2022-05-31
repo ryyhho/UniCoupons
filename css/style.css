@@ -88,9 +88,8 @@
 }
 
 header {
-    padding-bottom: 15px;
+    padding-bottom: 50px;
     position: relative;
-    height: 450px;
     background-image: linear-gradient(#ff9d2f, #ff6126);
     clip-path: polygon(0 0,
             100% 0,
