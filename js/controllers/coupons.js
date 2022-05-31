@@ -48,12 +48,4 @@ angular.module('uniCoupons.controllers').controller('uniCoupons.controllers.coup
             return moment(date).isSameOrAfter(moment());
          }
 
-         $(window).scroll(function () {
-            if ($(document).scrollTop() > $("#header").height()) {
-               $("#nav").removeClass("res-nav")
-            } else {
-               $("#nav").addClass("res-nav");
-            }
-         });
-
       }]);

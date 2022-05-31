@@ -1,8 +1,10 @@
 <li class="nav-item dropdown" ng-if="!utente">
-    <button class="nav-link btn border border-dark buttonLogin mt-auto" role="button" id="loginDropdownMenu" data-bs-toggle="dropdown" data-bs-auto-close="outside"
-        aria-expanded="false">
-        <i class="bi bi-lock"></i> Login
-    </button>
+    <a class="nav-link text-uppercase" id="loginDropdownMenu" data-bs-toggle="dropdown"
+        data-bs-auto-close="outside" aria-expanded="false" role="button">
+        <strong>
+            <i class="bi bi-door-open-fill"></i> Login
+        </strong>
+    </a>
     <div class="dropdown-menu dropdown-menu-end log-in">
         <form class="px-4 py-3" id="formLogin" name="formLogin">
             <div class="d-flex justify-content-center align-items-center overlay" ng-if="loading">
@@ -16,7 +18,8 @@
                 <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
             </div>
             <div class="mb-3">
-                <label for="DropdownFormEmail" class="form-label"> <i class="bi bi-envelope"></i> Indirizzo e-mail</label>
+                <label for="DropdownFormEmail" class="form-label"> <i class="bi bi-envelope"></i> Indirizzo
+                    e-mail</label>
                 <input type="email" class="form-control shadow" id="DropdownFormEmail" ng-model="loginForm.email"
                     required autofocus>
             </div>
@@ -34,8 +37,9 @@
                     </label>
                 </div>
             </div>
-            <button type="submit" class="btn mt-auto btn-outline-dark rounded-pill" ng-click="formLogin.$valid && signIn()"><span
-                    class="spinner-border spinner-border-sm" role="status" aria-hidden="true" ng-if="loading"></span>
+            <button type="submit" class="btn mt-auto btn-outline-dark rounded-pill"
+                ng-click="formLogin.$valid && signIn()"><span class="spinner-border spinner-border-sm" role="status"
+                    aria-hidden="true" ng-if="loading"></span>
                 Accedi</button>
         </form>
         <div class="dropdown-divider"></div>
@@ -45,10 +49,12 @@
 </li>
 
 <li class="nav-item dropdown" ng-if="utente">
-    <a class="nav-link" role="button" id="profileDropdownMenu" data-bs-toggle="dropdown" data-bs-auto-close="outside"
-        aria-expanded="false">
+    <a class="nav-link text-uppercase d-flex align-items-center" role="button" id="profileDropdownMenu" data-bs-toggle="dropdown"
+        data-bs-auto-close="outside" aria-expanded="false">
         <img src="img\user.jpg" class="rounded-circle me-1" width="24" />
-        {{utente.nome}} {{utente.cognome}}
+        <strong>
+            {{utente.nome}} {{utente.cognome}}
+        </strong>
     </a>
     <div class="dropdown-menu dropdown-menu-end">
         <a class="dropdown-item menuClick" href="#" ng-click="">I miei coupon</a>
