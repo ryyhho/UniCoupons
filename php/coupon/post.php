@@ -16,7 +16,7 @@ try {
         $descrizione = isset($request->descrizione) ? $request->descrizione : '';
         $data_inizio = $request->data_inizio;
         $data_fine = isset($request->data_fine) ? $request->data_fine : null;
-        $euro_perc = isset($request->euro_perc) ? $request->euro_perc : null;
+        $euro_perc = isset($request->euro_perc) ? ($request->euro_perc ? 'true' : 'false') : null;
 
         $q2 = 'INSERT INTO coupon
         (email, id_ente, codice, titolo, descrizione, data_inizio, data_fine, euro_perc) 

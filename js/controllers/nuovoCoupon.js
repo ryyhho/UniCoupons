@@ -31,7 +31,10 @@ angular.module('uniCoupons.controllers').controller('uniCoupons.controllers.nuov
                 couponFactory.post($scope.nuovoCouponForm).then(
                     function (res) {
                         $scope.init();
-                        $scope.nuovoCouponForm = {};
+                        $scope.nuovoCouponForm = {
+                            euro_perc: false,
+                            data_inizio: moment().toDate()
+                        };
                         $('#nuovoCouponModal').modal('hide');
                     },
                     function (err) {
