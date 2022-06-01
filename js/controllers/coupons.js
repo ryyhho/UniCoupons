@@ -57,6 +57,9 @@ angular.module('uniCoupons.controllers').controller('uniCoupons.controllers.coup
                   var tooltipList = tooltipTriggerList.map(function (tooltipTriggerEl) {
                      return new bootstrap.Tooltip(tooltipTriggerEl)
                   })
+
+                  //ATTIVO SLIDE NEXT ENTI
+                  $('#next-slide').click();
                }, 1000);
             }
          );

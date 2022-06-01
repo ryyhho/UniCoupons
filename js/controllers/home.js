@@ -18,7 +18,7 @@ angular.module('uniCoupons.controllers').controller('uniCoupons.controllers.home
             });
 
         $(window).scroll(function () {
-            if ($(document).scrollTop() > $("#header").height()) {
+            if ($(document).scrollTop() > $("#header").outerHeight()) {
                 $("#nav").removeClass("res-nav")
             } else {
                 $("#nav").addClass("res-nav");

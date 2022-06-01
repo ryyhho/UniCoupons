@@ -35,15 +35,6 @@
                 <input type="password" class="form-control shadow" id="DropdownFormPassword" ng-model="loginForm.psw"
                     required>
             </div>
-            <div class="mb-3">
-                <div class="form-check">
-                    <input type="checkbox" class="form-check-input" id="dropdownCheck"
-                        ng-model="loginForm.rememberFlag">
-                    <label class="form-check-label" for="dropdownCheck">
-                        Ricordami
-                    </label>
-                </div>
-            </div>
             <button type="submit" class="btn mt-auto btn-outline-dark rounded-pill"
                 ng-click="formLogin.$valid && signIn()"><span class="spinner-border spinner-border-sm" role="status"
                     aria-hidden="true" ng-if="loading"></span>

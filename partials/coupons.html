@@ -1,31 +1,34 @@
 <header id="header">
-    <div class="text-center pt-5" id="couponsSection">
+    <div class="text-center pt-5">
         <h3 class="h3">Qui puoi
-        <span id="header-span">trovare </span>i migliori coupons</h3>
+            <span id="header-span">trovare </span>i migliori coupons
+        </h3>
         <h1 class="display-1"><i class="bi bi-ticket-perforated"></i></h1>
     </div>
 </header>
 
 <section class="pt-5 pb-5">
     <div class="container p-3">
-        <div class="row">
-            <div class="col-md-6">
+        <div class="row d-flex align-items-center">
+            <div class="col-6">
                 <h3 class="h3">I nostri partner </h3>
             </div>
-            <div class="col-md-6 text-end d-none d-sm-block">
+            <div class="col-6 text-end d-none d-sm-block">
                 <a data-bs-target="#nuovoEnteModal" data-bs-toggle="modal" ng-if="utente && utente.admin"
                     class="btn btn-outline-dark rounded-pill mt-auto"> <i class="bi bi-building"></i> Nuovo Ente</a>
             </div>
-            <div class="col-md-6  d-md-none text-end">
-                <a class="btn btn-primary mb-3 pr-3" href="#carouselPartner" role="button" data-bs-slide="prev">
-                    <i class="bi bi-arrow-left-square"></i>
+            <div class="col-6 d-md-none text-end">
+                <a class="btn btn-lg mb-3 pr-3" role="button" data-bs-target="#carouselPartner" data-bs-slide="prev">
+                    <i class="bi bi-arrow-left-circle"></i>
                 </a>
-                <a class="btn btn-primary mb-3 " href="#carouselPartner" role="button" data-bs-slide="next">
-                    <i class="bi bi-arrow-right-square"></i>
+                <a class="btn btn-lg mb-3 " id="next-slide" role="button" data-bs-target="#carouselPartner" data-bs-slide="next">
+                    <i class="bi bi-arrow-right-circle"></i>
                 </a>
             </div>
+        </div>
+        <div class="row">
             <div class="col-12 pt-5">
-                <div id="carouselPartner" class="carousel carousel-dark slide" data-bs-ride="carousel">
+                <div id="carouselPartner" class="carousel carousel-dark slide" data-bs-touch="true" data-bs-ride="carousel">
                     <div class="carousel-inner">
                         <div class="carousel-item" ng-class="{active: $first}" ng-repeat="item in enti">
                             <div class="d-flex justify-content-center row">
@@ -93,7 +96,8 @@
                                             ng-src="src\ente\{{elem.id_ente}}.jpg" on-error-src="img\company.png"
                                             class="rounded-circle me-1 coupon-img"><span
                                             class="d-block">{{getEnte(elem.id_ente).nome}}</span><span
-                                            class="text-black-50 text-truncate truncate-width">{{getEnte(elem.id_ente).descrizione}}</span></div>
+                                            class="text-black-50 text-truncate truncate-width">{{getEnte(elem.id_ente).descrizione}}</span>
+                                    </div>
                                 </div>
                                 <div class="col-md-8 d-flex flex-column justify-content-between">
                                     <div class="d-flex flex-row justify-content-between off px-3">
@@ -113,7 +117,9 @@
                                         </div>
                                     </div>
                                     <div class="d-flex flex-row justify-content-between off px-3 p-2">
-                                        <span class="pe-2 text-truncate" style="max-width: 170px;" data-bs-toggle="tooltip" data-bs-placement="bottom" title="{{elem.descrizione}}">
+                                        <span class="pe-2 text-truncate" style="max-width: 170px;"
+                                            data-bs-toggle="tooltip" data-bs-placement="bottom"
+                                            title="{{elem.descrizione}}">
                                             {{elem.descrizione}}
                                         </span>
                                         <button type="button" ng-click="copyCode(elem)"
@@ -139,14 +145,16 @@
 </figure>
 
 <div class="btn-group dropup d-md-none" ng-if="utente">
-    <button type="button" class="btn btn-dark btn-lg rounded-circle shadow-lg position-fixed bottom-0 end-0 m-5 p-3 ng-scope"
+    <button type="button"
+        class="btn btn-dark btn-lg rounded-circle shadow-lg position-fixed bottom-0 end-0 m-5 p-3 ng-scope"
         data-bs-toggle="dropdown" aria-expanded="false">
         <i class="bi bi-plus-lg m-1"></i>
     </button>
     <div class="dropdown-menu dropdown-menu-end shadow-lg mb-1">
         <a data-bs-target="#nuovoCouponModal" data-bs-toggle="modal" ng-if="utente" class="dropdown-item menuClick"> <i
                 class="bi bi-patch-plus"></i> Nuovo Coupon</a>
-        <a data-bs-target="#nuovoEnteModal" data-bs-toggle="modal" ng-if="utente && utente.admin" class="dropdown-item menuClick">
+        <a data-bs-target="#nuovoEnteModal" data-bs-toggle="modal" ng-if="utente && utente.admin"
+            class="dropdown-item menuClick">
             <i class="bi bi-building"></i> Nuovo Ente</a>
     </div>
 </div>
