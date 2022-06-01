@@ -1,4 +1,5 @@
 <script>
+    // ATTIVO TUTTI I TOOLTIP NELLA VIEW
     var tooltipTriggerList = [].slice.call(document.querySelectorAll('[data-bs-toggle="tooltip"]'))
     var tooltipList = tooltipTriggerList.map(function (tooltipTriggerEl) {
         return new bootstrap.Tooltip(tooltipTriggerEl)
@@ -24,8 +25,8 @@
                         <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
                     </div>
                     <div class="container-fluid">
-                        <div class="mb-3 row">
-                            <div class="col-md-12 d-flex flex-column text-center">
+                        <div class="row">
+                            <div class="col-md-12 mb-3 d-flex flex-column text-center">
                                 <a class="rounded-circle mx-auto" data-bs-toggle="tooltip" data-bs-placement="right" title="Seleziona file" 
                                     ng-click="selectImage()">
                                     <img src="img\company.png" id="inputImg"
@@ -35,15 +36,15 @@
                                 <input class="form-control visually-hidden" type="file" accept="image/jpeg" id="enteImg" ng-file-read="enteImg">
                             </div>
                         </div>
-                        <div class="mb-3 row">
-                            <div class="col-md-8">
+                        <div class="row">
+                            <div class="col-md-8 mb-3">
                                 <label for="nome" class="form-label">Nome</label>
                                 <input type="text" class="form-control shadow" id="nome" ng-model="nuovoEnteForm.nome"
                                     maxlength="20" required placeholder="Inserisci il nome dell'ente">
                             </div>
                         </div>
-                        <div class="mb-3 row">
-                            <div class="col-md-12">
+                        <div class="row">
+                            <div class="col-md-12 mb-3">
                                 <label for="descrizione" class="form-label">Descrizione</label>
                                 <textarea id="descrizione" class="form-control shadow" rows="3"
                                     ng-model="nuovoEnteForm.descrizione" placeholder="Descrizione o slogan dell'ente"

@@ -42,7 +42,7 @@
 .card-active {
     color: black;
     text-decoration: none;
-    background-color: #ff6126;
+    background-color: #ff9d2f;
     border-color: black;
 }
 
@@ -115,7 +115,7 @@ header {
 }
 
 .menuClick:active{
-    background-color: #ff6126 !important; 
+    background-color: #ff9d2f !important; 
 }
 
 .buttonLogin:hover{
@@ -126,21 +126,30 @@ header {
 
 
 .codeButton{
-    color: #ff6126;
-    border-color: #ff6126;
+    color: #ff9d2f;
+    border-color: #ff9d2f;
 }
 
 .codeButton:hover{
     
-    background-color: #ff6126;
+    background-color: #ff9d2f;
     color: white;
 }
 
 .checked-color:checked{
-    background-color: #ff6126 !important;
-    border-color: #ff6126 !important;
+    background-color: #ff9d2f !important;
+    border-color: #ff9d2f !important;
 }
 
 .truncate-width{
     max-width: 150px;
+}
+
+.form-input-search {
+    text-indent: 24px;
+    transition: box-shadow .3s;
+}
+
+.form-input-search:focus {
+    box-shadow: none !important;
 }

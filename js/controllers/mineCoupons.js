@@ -44,4 +44,17 @@ angular.module('uniCoupons.controllers').controller('uniCoupons.controllers.mine
             return moment(date).isSameOrAfter(moment());
          }
 
+         $scope.$watchCollection(
+            "coupons",
+            function (newValue, oldValue) {
+               $timeout(function () {
+                  // ATTIVO TUTTI I TOOLTIP NELLA VIEW
+                  var tooltipTriggerList = [].slice.call(document.querySelectorAll('[data-bs-toggle="tooltip"]'))
+                  var tooltipList = tooltipTriggerList.map(function (tooltipTriggerEl) {
+                     return new bootstrap.Tooltip(tooltipTriggerEl)
+                  })
+               }, 1000);
+            }
+         );
+
       }]);

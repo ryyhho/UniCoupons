@@ -1,4 +1,11 @@
-<li class="nav-item dropdown" ng-if="!utente">
+<script>
+    // ATTIVO TUTTI I TOOLTIP NELLA VIEW
+    var tooltipTriggerList = [].slice.call(document.querySelectorAll('[data-bs-toggle="tooltip"]'))
+    var tooltipList = tooltipTriggerList.map(function (tooltipTriggerEl) {
+        return new bootstrap.Tooltip(tooltipTriggerEl)
+    })
+</script>
+<li class="nav-item dropdown" id="nav-item-login" ng-if="!utente" data-bs-toggle="tooltip" data-bs-placement="left" title="Accedi per poter usufruire di tutte le funzionalità!">
     <a class="nav-link text-uppercase" id="loginDropdownMenu" data-bs-toggle="dropdown"
         data-bs-auto-close="outside" aria-expanded="false" role="button">
         <strong>

@@ -1,6 +1,6 @@
 angular.module('uniCoupons.controllers').controller('uniCoupons.controllers.login',
-    ['$scope', '$rootScope', 'uniCoupons.services.utenteFactory',
-        function ($scope, $rootScope, utenteFactory) {
+    ['$scope', '$rootScope', '$timeout', 'uniCoupons.services.utenteFactory',
+        function ($scope, $rootScope, $timeout, utenteFactory) {
 
             $scope.loginForm = {};
 
@@ -59,5 +59,17 @@ angular.module('uniCoupons.controllers').controller('uniCoupons.controllers.logi
                 $('#loginDropdownMenu').dropdown('toggle');
                 $scope.loginForm = {};
             };
+
+            $timeout(function () {
+                if(!$rootScope.utente) {
+                    $('#nav-item-login').tooltip('show');
+                    $timeout(function () {
+                        $('#nav-item-login').tooltip('hide');
+                        $timeout(function () {
+                            $('#nav-item-login').tooltip('dispose');
+                        }, 100);
+                    }, 5000);
+                }
+             }, 3000);
 
         }]);

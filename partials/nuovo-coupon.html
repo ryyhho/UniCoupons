@@ -1,6 +1,6 @@
 <div class="modal fade" id="nuovoCouponModal" tabindex="-1" aria-labelledby="nuovoCouponModalLabel" aria-hidden="true">
     <div class="modal-dialog modal-dialog-centered modal-lg modal-fullscreen-sm-down">
-        <div class="modal-content  formBackground">
+        <div class="modal-content bg-light">
             <form id="formNuovoCoupon" name="formNuovoCoupon">
                 <div class="d-flex justify-content-center align-items-center overlay" ng-if="loading">
                     <div class="spinner-border" role="status">
@@ -18,30 +18,30 @@
                         <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
                     </div>
                     <div class="container-fluid">
-                        <div class="mb-3 row">
-                            <div class="col-md-6">
+                        <div class="row">
+                            <div class="col-md-6 mb-3">
                                 <label for="ente" class="form-label">Ente</label>
                                 <select id="ente" class="form-select shadow" ng-model="nuovoCouponForm.id_ente" required
                                     ng-options="elem.id_ente as elem.nome for elem in entiList">
                                     <option value="" selected>Seleziona l'ente</option>
                                 </select>
                             </div>
-                            <div class="col-md-6 space">
+                            <div class="col-md-6 mb-3">
                                 <label for="codice" class="form-label">Codice</label>
                                 <input type="text" class="form-control shadow" id="codice" ng-model="nuovoCouponForm.codice"
                                     required placeholder="Codice del coupon" maxlength="20">
                             </div>
                         </div>
-                        <div class="mb-3 row">
-                            <div class="col-md-12 space">
+                        <div class="row">
+                            <div class="col-md-12 mb-3">
                                 <label for="descrizione" class="form-label">Descrizione</label>
                                 <textarea id="descrizione" class="form-control shadow" rows="3"
                                     ng-model="nuovoCouponForm.descrizione" placeholder="In cosa consiste l'offerta?"
                                     maxlength="150"></textarea>
                             </div>
                         </div>
-                        <div class="mb-3 row">
-                            <div class="col-md-6">
+                        <div class="row">
+                            <div class="col-md-6 mb-3">
                                 <label for="titolo" class="form-label">Importo</label>
                                 <input ng-if="!nuovoCouponForm.euro_perc" type="number" min="1" max="99" class="form-control shadow" id="titolo"
                                     ng-model="nuovoCouponForm.titolo" required placeholder="Scrivi l'importo"
@@ -50,7 +50,7 @@
                                     ng-model="nuovoCouponForm.titolo" required placeholder="Scrivi l'importo"
                                     ng-disabled="gratis">
                             </div>
-                            <div class="col-md-6 d-flex align-items-end space">
+                            <div class="col-md-6 mb-3 d-flex align-items-end">
                                 <div class="form-check form-check-inline">
                                     <input class="form-check-input checked-color" type="radio" name="euro_perc" ng-disabled="gratis"
                                         id="euro_perc1" ng-value="true" ng-model="nuovoCouponForm.euro_perc">
@@ -72,14 +72,14 @@
                                 </div>
                             </div>
                         </div>
-                        <div class="mb-3 row space">
-                            <div class="col-md-6">
+                        <div class="row space">
+                            <div class="col-md-6 mb-3">
                                 <label for="data_inizio" class="form-label">Inizio validità</label>
                                 <input type="date" class="form-control shadow" id="data_inizio"
                                     ng-model="nuovoCouponForm.data_inizio" required
                                     placeholder="Da quando è valido il coupon?">
                             </div>
-                            <div class="col-md-6 space">
+                            <div class="col-md-6 mb-3">
                                 <label for="data_fine" class="form-label">Scadenza</label>
                                 <input type="date" class="form-control shadow" id="data_fine"
                                     ng-model="nuovoCouponForm.data_fine" placeholder="Quando scade il coupon?">
