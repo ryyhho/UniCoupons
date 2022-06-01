@@ -20,14 +20,14 @@
                     <div class="container-fluid">
                         <div class="row">
                             <div class="col-md-6 mb-3">
-                                <label for="ente" class="form-label">Ente</label>
+                                <label for="ente" class="form-label">Ente *</label>
                                 <select id="ente" class="form-select shadow" ng-model="nuovoCouponForm.id_ente" required
                                     ng-options="elem.id_ente as elem.nome for elem in entiList">
                                     <option value="" selected>Seleziona l'ente</option>
                                 </select>
                             </div>
                             <div class="col-md-6 mb-3">
-                                <label for="codice" class="form-label">Codice</label>
+                                <label for="codice" class="form-label">Codice *</label>
                                 <input type="text" class="form-control shadow" id="codice" ng-model="nuovoCouponForm.codice"
                                     required placeholder="Codice del coupon" maxlength="20">
                             </div>
@@ -42,7 +42,7 @@
                         </div>
                         <div class="row">
                             <div class="col-md-6 mb-3">
-                                <label for="titolo" class="form-label">Importo</label>
+                                <label for="titolo" class="form-label">Importo *</label>
                                 <input ng-if="!nuovoCouponForm.euro_perc" type="number" min="1" max="99" class="form-control shadow" id="titolo"
                                     ng-model="nuovoCouponForm.titolo" required placeholder="Scrivi l'importo"
                                     ng-disabled="gratis">
@@ -74,7 +74,7 @@
                         </div>
                         <div class="row space">
                             <div class="col-md-6 mb-3">
-                                <label for="data_inizio" class="form-label">Inizio validità</label>
+                                <label for="data_inizio" class="form-label">Inizio validità *</label>
                                 <input type="date" class="form-control shadow" id="data_inizio"
                                     ng-model="nuovoCouponForm.data_inizio" required
                                     placeholder="Da quando è valido il coupon?">
