@@ -1,6 +1,6 @@
 angular.module('uniCoupons.controllers').controller('uniCoupons.controllers.coupons',
-   ['$scope', '$rootScope', '$filter', '$timeout', 'uniCoupons.services.enteFactory', 'uniCoupons.services.couponFactory',
-      function ($scope, $rootScope, $filter, $timeout, enteFactory, couponFactory) {
+   ['$scope', '$rootScope', '$filter', '$timeout', '$interval', 'uniCoupons.services.enteFactory', 'uniCoupons.services.couponFactory',
+      function ($scope, $rootScope, $filter, $timeout, $interval, enteFactory, couponFactory) {
 
          $scope.init = function () {
             enteFactory.get().then(function (res) {
@@ -61,20 +61,21 @@ angular.module('uniCoupons.controllers').controller('uniCoupons.controllers.coup
             }
          );
 
-         setInterval(function(){
-            const show = document.querySelector('span[data-show')
-            const next = show.nextElementSibling || document.querySelector('span:first-child')
-            const up = document.querySelector('span[data-up')
+         var words = [
+            'pubblicare ',
+            'cercare ',
+            'approfittare de',
+            'trovare '
+         ], i = 0;
 
+         var intervalSpan = $interval(function () {
+            $('#header-span').fadeOut(function () {
+               $(this).html(words[i = (i + 1) % words.length]).fadeIn();
+            });
+         }, 2000);
 
-            if(up){
-               up.removeAttribute('data-up')
-            }
-
-            show.removeAttribute('data-show')
-            show.setAttribute('data-up', '')
-
-            next.setAttribute('data-show', '')
-         }, 2000)
+         $scope.$on('$destroy', function () {
+            $interval.cancel(intervalSpan);
+         });
 
       }]);
