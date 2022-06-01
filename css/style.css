@@ -145,6 +145,10 @@ header {
     max-width: 150px;
 }
 
+.truncate-width-2{
+    max-width: 170px;
+}
+
 .form-input-search {
     text-indent: 24px;
     transition: box-shadow .3s;
