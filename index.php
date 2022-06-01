@@ -16,6 +16,7 @@ $dbconn = pg_connect($db_details) or die('Impossibile connetersi: ' . preg_last_
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>UniCoupons</title>
+    <link rel="icon" type="image/x-icon" href="img\favicon.png">
 
     <!-- css -->
     <link href="libs\bootstrap-5.1.3-dist\css\bootstrap-custom.css" rel="stylesheet">
@@ -66,8 +67,8 @@ $dbconn = pg_connect($db_details) or die('Impossibile connetersi: ' . preg_last_
             <button class="navbar-toggler border-0" type="button" data-bs-toggle="collapse" data-bs-target="#navbar" aria-controls="navbar" aria-expanded="false" aria-label="Toggle navigation">
                 <span class="navbar-toggler-icon"></span>
             </button>
-            <a class="navbar-brand" ui-sref="home.coupons">
-                <img src="/docs/5.1/assets/brand/bootstrap-logo.svg" alt="" width="30" height="24" class="d-inline-block align-text-top">
+            <a class="navbar-brand ps-2" ui-sref="home.coupons">
+                <img src="img\logo.png" alt="" width="30" height="30" class="d-inline-block align-text-top">
                 UniCoupons
             </a>
             <div class="collapse navbar-collapse justify-content-end" id="navbar">
