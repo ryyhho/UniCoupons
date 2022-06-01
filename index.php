@@ -71,7 +71,7 @@ $dbconn = pg_connect($db_details) or die('Impossibile connetersi: ' . preg_last_
                 UniCoupons
             </a>
             <div class="collapse navbar-collapse justify-content-end" id="navbar">
-                <form class="position-relative d-flex mx-auto w-md-50 mb-2 mb-md-0">
+                <form class="position-relative d-flex mx-auto w-md-50 my-2 my-md-0">
                     <i class="bi bi-search position-absolute top-50 start-0 translate-middle-y ms-3"></i>
                     <input type="text" class="form-control form-input-search rounded-pill shadow" placeholder="Cerca coupons...">
                     <button class="btn btn-lg position-absolute top-50 end-0 translate-middle-y" type="submit" ui-sref="home.searchCoupons({v: search})"><i class="bi bi-arrow-bar-right"></i></button>
