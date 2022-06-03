@@ -19,8 +19,6 @@ directives.directive('onErrorSrc', function() {
           element.bind("change", function (changeEvent) {
               scope.$apply(function () {
                   scope.ngFileRead = changeEvent.target.files[0];
-                  // or all selected files:
-                  // scope.fileread = changeEvent.target.files;
               });
           });
       }
