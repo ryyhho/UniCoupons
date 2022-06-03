@@ -28,8 +28,9 @@
                             </div>
                             <div class="col-md-6 mb-3">
                                 <label for="codice" class="form-label">Codice *</label>
-                                <input type="text" class="form-control shadow" id="codice" ng-model="nuovoCouponForm.codice"
-                                    required placeholder="Codice del coupon" maxlength="20">
+                                <input type="text" class="form-control shadow" id="codice"
+                                    ng-model="nuovoCouponForm.codice" required placeholder="Codice del coupon"
+                                    maxlength="20">
                             </div>
                         </div>
                         <div class="row">
@@ -43,31 +44,36 @@
                         <div class="row">
                             <div class="col-md-6 mb-3">
                                 <label for="titolo" class="form-label">Importo *</label>
-                                <input ng-if="!nuovoCouponForm.euro_perc" type="number" min="1" max="99" class="form-control shadow" id="titolo"
-                                    ng-model="nuovoCouponForm.titolo" required placeholder="Scrivi l'importo"
-                                    ng-disabled="gratis">
-                                <input ng-if="nuovoCouponForm.euro_perc" type="number" min="1" max="99999" class="form-control shadow" id="titolo"
-                                    ng-model="nuovoCouponForm.titolo" required placeholder="Scrivi l'importo"
-                                    ng-disabled="gratis">
+                                <input ng-if="nuovoCouponForm.euro_perc === false" type="number" min="1" max="99"
+                                    class="form-control shadow" id="titolo" ng-model="nuovoCouponForm.titolo" required
+                                    placeholder="Scrivi l'importo" ng-disabled="gratis">
+                                <input ng-if="nuovoCouponForm.euro_perc === true" type="number" min="1" max="99999"
+                                    class="form-control shadow" id="titolo" ng-model="nuovoCouponForm.titolo" required
+                                    placeholder="Scrivi l'importo" ng-disabled="gratis">
+                                <input ng-if="nuovoCouponForm.euro_perc === undefined" type="number" min="0" max="0"
+                                    class="form-control shadow" id="titolo" ng-model="nuovoCouponForm.titolo" required
+                                    placeholder="Scrivi l'importo" ng-disabled="gratis">
                             </div>
                             <div class="col-md-6 mb-3 d-flex align-items-end">
                                 <div class="form-check form-check-inline">
-                                    <input class="form-check-input checked-color" type="radio" name="euro_perc" ng-disabled="gratis"
-                                        id="euro_perc1" ng-value="true" ng-model="nuovoCouponForm.euro_perc">
+                                    <input class="form-check-input checked-color" type="radio" name="euro_perc"
+                                        ng-disabled="gratis" id="euro_perc1" ng-value="true"
+                                        ng-model="nuovoCouponForm.euro_perc">
                                     <label class="form-check-label" for="euro_perc1">
                                         <i class="bi bi-currency-euro"></i>
                                     </label>
                                 </div>
                                 <div class="form-check form-check-inline">
-                                    <input class="form-check-input checked-color" type="radio" name="euro_perc" ng-disabled="gratis"
-                                        id="euro_perc2" ng-value="false" ng-model="nuovoCouponForm.euro_perc">
+                                    <input class="form-check-input checked-color" type="radio" name="euro_perc"
+                                        ng-disabled="gratis" id="euro_perc2" ng-value="false"
+                                        ng-model="nuovoCouponForm.euro_perc">
                                     <label class="form-check-label" for="euro_perc2">
                                         <i class="bi bi-percent"></i>
                                     </label>
                                 </div>
                                 <div class="form-check form-switch">
-                                    <input class="form-check-input checked-color" type="checkbox" role="switch" id="gratis"
-                                        ng-model="gratis" ng-click="updateImporto()">
+                                    <input class="form-check-input checked-color" type="checkbox" role="switch"
+                                        id="gratis" ng-model="gratis" ng-click="updateImporto()">
                                     <label class="form-check-label" for="gratis">Gratis</label>
                                 </div>
                             </div>
@@ -88,8 +94,10 @@
                     </div>
                 </div>
                 <div class="modal-footer">
-                    <button type="button" class="btn btn-outline-danger" data-bs-dismiss="modal"> <i class="bi bi-x-lg"></i> Chiudi</button>
-                    <button type="submit" class="btn btn-outline-success" ng-click="formNuovoCoupon.$valid && insertCoupon()">
+                    <button type="button" class="btn btn-outline-danger" data-bs-dismiss="modal"> <i
+                            class="bi bi-x-lg"></i> Chiudi</button>
+                    <button type="submit" class="btn btn-outline-success"
+                        ng-click="formNuovoCoupon.$valid && insertCoupon()">
                         <span class="spinner-border spinner-border-sm" role="status" aria-hidden="true"
                             ng-if="loading"></span>
                         <i class="bi bi-box-arrow-in-right"></i> Conferma</button>
